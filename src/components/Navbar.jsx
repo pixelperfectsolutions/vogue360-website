@@ -1,15 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -25,15 +39,23 @@ const Navbar = () => {
 
   return (
     <motion.nav 
-      className="navbar"
+      className={`navbar ${scrolled ? 'scrolled' : ''}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ 
+        type: "spring",
+        stiffness: 100,
+        damping: 20
+      }}
     >
       <div className="container">
         <motion.div 
           className="logo"
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ 
+            scale: 1.05,
+            textShadow: "0 0 10px rgba(212, 175, 55, 0.5)"
+          }}
+          transition={{ type: "spring", stiffness: 300 }}
         >
           <Link to="/">Vouge360<span className="dot">.</span>in</Link>
         </motion.div>
@@ -44,8 +66,13 @@ const Navbar = () => {
               key={item.name}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ 
+                delay: index * 0.1,
+                type: "spring",
+                stiffness: 300
+              }}
               className={location.pathname === item.path ? 'active' : ''}
+              whileHover={{ y: -5 }}
             >
               <Link to={item.path}>{item.name}</Link>
             </motion.li>
@@ -53,7 +80,29 @@ const Navbar = () => {
         </ul>
         
         <div className="menu-icon" onClick={toggleMenu}>
-          {isMenuOpen ? <FiX /> : <FiMenu />}
+          <AnimatePresence mode="wait">
+            {isMenuOpen ? (
+              <motion.div
+                key="close"
+                initial={{ rotate: 0 }}
+                animate={{ rotate: 90 }}
+                exit={{ rotate: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <FiX />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="menu"
+                initial={{ rotate: 90 }}
+                animate={{ rotate: 0 }}
+                exit={{ rotate: 90 }}
+                transition={{ duration: 0.2 }}
+              >
+                <FiMenu />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </motion.nav>

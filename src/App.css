@@ -19,6 +19,9 @@ body {
   overflow-x: hidden;
   background-color: #0a0a0a;
   color: #f5f5f5;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(30, 30, 30, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(30, 30, 30, 0.1) 0%, transparent 20%);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -45,11 +48,31 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(45deg, #d4af37, #c59d5f);
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  width: 100%;
 }
 
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+  color: #0a0a0a;
 }
 
 .section-title {
@@ -116,6 +139,29 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(0);
 }
 
+/* Decorative Elements */
+.decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(197, 157, 95, 0.1) 0%, transparent 70%);
+  z-index: -1;
+}
+
+.circle-1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 5%;
+}
+
+.circle-2 {
+  width: 200px;
+  height: 200px;
+  bottom: 10%;
+  right: 5%;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .section-title h2 {
     font-size: 2rem;
@@ -123,5 +169,9 @@ h1, h2, h3, h4, h5, h6 {
   
   .page-container {
     padding: 80px 0;
+  }
+  
+  .decorative-circle {
+    display: none;
   }
 }
