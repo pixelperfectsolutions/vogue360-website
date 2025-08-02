@@ -1,15 +1,29 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Home.css';
+import slider1 from '../assets/slider1.jpg';
+import slider2 from '../assets/slider2.jpg';
+import slider3 from '../assets/slider3.jpeg';
+import slider4 from '../assets/slider4.avif';
 
 const Home = () => {
   const sectionRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderImages = [slider1, slider2, slider3, slider4];
 
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % sliderImages.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [sliderImages.length]);
 
   const services = [
     {
@@ -45,32 +59,44 @@ const Home = () => {
 
   return (
     <div className="home">
-      {/* Hero Section */}
+      {/* Hero Section with Slider */}
       <section className="hero">
-        <div className="hero-content">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Experience Luxury <br />Transformation at <span>Vouge360</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Where artistry meets precision. Our expert stylists create personalized looks that enhance your natural beauty.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="hero-buttons"
-          >
-            <Link to="/services" className="btn btn-primary">Our Services</Link>
-            <Link to="/contact" className="btn btn-secondary">Book Appointment</Link>
-          </motion.div>
+        <div className="hero-slider">
+          <div className="slider-container">
+            {sliderImages.map((image, index) => (
+              <img 
+                key={index} 
+                src={image} 
+                alt={`Vouge360 Salon ${index + 1}`} 
+                className={`slider-image ${index === currentSlide ? 'active' : ''}`} 
+              />
+            ))}
+          </div>
+          <div className="hero-content">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              Experience Luxury <br />Transformation at <span>Vouge360</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Where artistry meets precision. Our expert stylists create personalized looks that enhance your natural beauty.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="hero-buttons"
+            >
+              <Link to="/services" className="btn btn-primary">Our Services</Link>
+              <Link to="/contact" className="btn btn-secondary">Book Appointment</Link>
+            </motion.div>
+          </div>
         </div>
       </section>
 
