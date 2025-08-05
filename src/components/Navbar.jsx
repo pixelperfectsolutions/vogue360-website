@@ -82,6 +82,10 @@ const Navbar = () => {
           ))}
         </ul>
         
+        <a href="tel:+1234567890" className="btn cta-button">
+          CALL NOW
+        </a>
+        
         <div className="menu-icon" onClick={toggleMenu}>
           <AnimatePresence mode="wait">
             {isMenuOpen ? (

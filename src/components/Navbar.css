@@ -65,11 +65,18 @@
     color: #000000;
 }
 
+.cta-button {
+    margin-left: 20px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
 .menu-icon {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
     color: #000000;
+    margin-left: 15px;
 }
 
 @media (max-width: 768px) {
@@ -96,5 +103,9 @@
 
     .nav-links li {
         margin: 15px 0;
+    }
+    
+    .cta-button {
+        display: none;
     }
 }
