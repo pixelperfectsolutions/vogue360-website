@@ -414,21 +414,7 @@ const Services = () => {
             ))}
           </div>
           
-          {/* Featured Services */}
-          <div className="services-grid">
-            {topServices.map((service, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                whileHover={{ y: -5 }}
-                className="service-card feature-card"
-              >
-                <div className="service-icon">{service.icon}</div>
-                <h3>{service.title}</h3>
-                <p>{service.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+          {/* Featured Services - Removed as per user request */}
         </motion.div>
 
         <motion.div
@@ -479,18 +465,7 @@ const Services = () => {
         >
           <motion.h2 variants={fadeInUp}>Price List</motion.h2>
           
-          <motion.div variants={fadeInUp} className="price-categories">
-            <button className="price-category-btn active">All Services</button>
-            <button className="price-category-btn">Hair Care</button>
-            <button className="price-category-btn">Beauty</button>
-            <button className="price-category-btn">Spa</button>
-            <button className="price-category-btn">Nails</button>
-            <button className="price-category-btn">Treatments</button>
-            <button className="price-category-btn">Seasoul Facials</button>
-            <button className="price-category-btn">Lotus Facials</button>
-            <button className="price-category-btn">CV Pro Facials</button>
-            <button className="price-category-btn">Derma Facials</button>
-          </motion.div>
+          {/* Price categories removed as per user request */}
 
           <motion.div variants={fadeInUp}>
             <h3 className="price-category-title">Hair Care</h3>

@@ -27,20 +27,34 @@ const Home = () => {
 
   const services = [
     {
-      title: "Hair Cutting",
-      description: "Precision cuts tailored to your face shape and style preferences."
+      icon: "💇‍♀️",
+      title: "Hair Care",
+      description: "Advanced haircuts, highlights, global hair color, straightening & volumizing."
     },
     {
-      title: "Hair Coloring",
-      description: "Professional coloring services with premium products for vibrant results."
+      icon: "💆‍♀️",
+      title: "Hair Treatments",
+      description: "Keratin, Hair Botox, Botoliss, Anti-Dandruff & Hair-loss solutions."
     },
     {
-      title: "Beard Grooming",
-      description: "Expert beard shaping and styling for the modern gentleman."
+      icon: "🌟",
+      title: "Skin & Facials",
+      description: "CV Pro, Lotus, Seasoul, Derma & Korean facials for every skin type."
     },
     {
-      title: "Spa Treatments",
-      description: "Luxurious treatments to rejuvenate your skin and senses."
+      icon: "💄",
+      title: "Beauty Essentials",
+      description: "Hydra facial, threading, de-tan, party & advanced makeup, waxing."
+    },
+    {
+      icon: "💅",
+      title: "Nail Services",
+      description: "Manicure, pedicure, nail art, extensions, gel polish, heel peel."
+    },
+    {
+      icon: "🌿",
+      title: "Targeted Skin Care",
+      description: "Pigmentation, acne care, under-eye therapy & sensitive skin solutions."
     }
   ];
 
@@ -138,7 +152,7 @@ const Home = () => {
                 className="service-card"
               >
                 <div className="service-icon">
-                  <span>0{index + 1}</span>
+                  <span className="emoji-icon">{service.icon}</span>
                 </div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
