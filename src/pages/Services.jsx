@@ -40,6 +40,15 @@ const Services = () => {
     }
   ];
 
+  const topServices = [
+    { title: 'Hair Care', icon: '💇‍♀️', desc: 'Advanced haircuts, highlights, global hair color, straightening & volumizing.' },
+    { title: 'Hair Treatments', icon: '💆‍♀️', desc: 'Keratin, Hair Botox, Botoliss, Anti-Dandruff & Hair-loss solutions.' },
+    { title: 'Skin & Facials', icon: '🌟', desc: 'CV Pro, Lotus, Seasoul, Derma & Korean facials for every skin type.' },
+    { title: 'Beauty Essentials', icon: '💄', desc: 'Hydra facial, threading, de-tan, party & advanced makeup, waxing.' },
+    { title: 'Nail Services', icon: '💅', desc: 'Manicure, pedicure, nail art, extensions, gel polish, heel peel.' },
+    { title: 'Targeted Skin Care', icon: '🌿', desc: 'Pigmentation, acne care, under-eye therapy & sensitive skin solutions.' }
+  ];
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -56,6 +65,40 @@ const Services = () => {
   return (
     <div className="services-page page-container">
       <div className="container">
+        {/* Top Services Cards */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={staggerContainer}
+          className="top-services mb-5"
+        >
+          <motion.h1 variants={fadeInUp} className="section-title text-center mb-3">
+            Our Services
+          </motion.h1>
+          <motion.p variants={fadeInUp} className="text-center mb-4">
+            Welcome to <b>VOGUE 360</b> – where beauty meets wellness.<br/>
+            Explore our all-in-one destination for hair, beauty, skin, nails and rejuvenation treatments designed to bring out your best self.
+          </motion.p>
+
+          <div className="services-grid">
+            {topServices.map((svc, idx) => (
+              <motion.div
+                key={idx}
+                variants={fadeInUp}
+                whileHover={{ y: -10 }}
+                className="service-card"
+              >
+                <div className="service-icon" style={{ fontSize: 48 }}>
+                  {svc.icon}
+                </div>
+                <h3>{svc.title}</h3>
+                <p style={{ minHeight: 60 }}>{svc.desc}</p>
+                <a href="tel:+919944471130" className="btn btn-primary w-100 mt-auto">CALL NOW</a>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -76,46 +119,32 @@ const Services = () => {
           </motion.p>
         </motion.div>
 
-        <div className="services-content">
+        <div className="services-list">
           {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={staggerContainer}
-              className="service-category"
-            >
-              <motion.h2
-                variants={fadeInUp}
-                className="category-title"
-              >
-                {service.category}
-              </motion.h2>
-              
-              <motion.div
-                variants={staggerContainer}
-                className="service-items"
-              >
-                {service.items.map((item, itemIndex) => (
-                  <motion.div
-                    key={itemIndex}
-                    variants={fadeInUp}
-                    whileHover={{ x: 10 }}
-                    className="service-item"
-                  >
-                    <div className="service-info">
-                      <h3>{item.name}</h3>
-                      <p className="duration">{item.duration}</p>
-                    </div>
-                    <div className="service-price">
-                      {item.price}
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
-          ))}
+  <motion.div
+    key={index}
+    variants={fadeInUp}
+    whileHover={{ y: -10 }}
+    className="service-card"
+  >
+    <div className="service-icon">
+      <span>{index + 1}</span>
+    </div>
+    <h3>{service.category}</h3>
+    <div className="service-items">
+      {service.items.map((item, itemIndex) => (
+        <div className="service-item" key={itemIndex}>
+          <div className="service-info">
+            <h4>{item.name}</h4>
+            <span className="duration">{item.duration}</span>
+          </div>
+          <div className="service-price">{item.price}</div>
+        </div>
+      ))}
+    </div>
+    <a href="tel:+919944471130" className="btn btn-primary w-100 mt-auto">CALL NOW</a>
+  </motion.div>
+))}
         </div>
 
         <motion.div
