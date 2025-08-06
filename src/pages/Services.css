@@ -1,6 +1,7 @@
 .services-page {
-  background: #0a0a0a;
+  background: #000000;
   padding: 120px 0;
+  color: #ffffff;
 }
 
 .services-page .section-title {
@@ -9,12 +10,13 @@
 
 .services-page .section-title h1 {
   font-size: 3rem;
-  color: #fff;
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .section-subtitle {
   text-align: center;
-  color: #aaa;
+  color: #a1a1a6;
   max-width: 700px;
   margin: 0 auto 40px;
   font-size: 1.2rem;
@@ -81,26 +83,106 @@
 }
 
 .services-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.service-card {
+  width: 100%;
+  background: #1c1c1e;
+  position: relative;
+  z-index: 2;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(255,255,255,0.05);
+  padding: 32px 28px 28px 28px;
+  color: #ffffff;
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+}
+.service-card:hover {
+  box-shadow: 0 12px 30px rgba(255,255,255,0.08);
+  transform: translateY(-8px) scale(1.02);
+  background: #2c2c2e;
+}
+.service-card h3 {
+  color: #ffffff;
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.service-card p {
+  color: #a1a1a6;
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  flex-grow: 1;
+}
+.service-card .service-price {
+  color: #2997ff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+.service-badge {
+  background: #2c2c2e;
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 5px 12px;
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  background: linear-gradient(45deg, #2997ff, #5ac8fa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #2997ff;
+}
+
+.btn-primary {
+  background: #2997ff;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: #0071e3;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(41, 151, 255, 0.3);
 }
 
 .booking-cta {
   text-align: center;
-  background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), 
-              url('https://images.unsplash.com/photo-1521490973542-449b7af6020e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+  background: linear-gradient(135deg, #2997ff, #0071e3);
   background-size: cover;
   background-position: center;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 60px 30px;
   margin-top: 60px;
+  color: #fff;
 }
 
 .booking-cta h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: #fff;
+  font-weight: 600;
 }
 
 .booking-cta p {
@@ -110,6 +192,71 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature-card {
+  max-width: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.category-btn {
+  background: #f2f2f7;
+  border: none;
+  color: #1d1d1f;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.category-btn.active {
+  background: #06c;
+  color: #fff;
+}
+
+.category-btn:hover {
+  background: #e5e5ea;
+  transform: translateY(-2px);
+}
+
+.category-btn.active:hover {
+  background: #007aff;
+}
+
+@media (max-width: 1200px) {
+  .services-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
