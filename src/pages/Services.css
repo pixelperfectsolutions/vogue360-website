@@ -1,11 +1,37 @@
 .services-page {
   background: #000000;
-  padding: 120px 0;
+  padding: 0 0 120px;
   color: #ffffff;
 }
 
+.services-header {
+  background-color: #0f0a1a;
+  padding: 60px 0;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.services-header-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services-header h1 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.services-header p {
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
 .services-page .section-title {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 .services-page .section-title h1 {
@@ -122,11 +148,25 @@
   margin-bottom: 18px;
   flex-grow: 1;
 }
-.service-card .service-price {
-  color: #2997ff;
+.service-card .call-now-btn {
+  color: #ffe7c1;
   font-weight: 600;
   font-size: 1.2rem;
   margin-top: 10px;
+  background-color: transparent;
+  border: 2px solid #ffe7c1;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+}
+
+.service-card:hover .call-now-btn {
+  opacity: 1;
+  transform: translateY(0);
 }
 .service-badge {
   background: #2c2c2e;
@@ -141,17 +181,17 @@
 .service-icon {
   font-size: 2.5rem;
   margin-bottom: 16px;
-  background: linear-gradient(45deg, #2997ff, #5ac8fa);
+  background: linear-gradient(45deg, #ffe7c1, #ffd280);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: #2997ff;
+  color: #ffe7c1;
 }
 
 .btn-primary {
-  background: #2997ff;
+  background: #ffe7c1;
   border: none;
-  color: #fff;
+  color: #000;
   font-weight: 600;
   padding: 10px 20px;
   border-radius: 20px;
@@ -162,33 +202,33 @@
 }
 
 .btn-primary:hover {
-  background: #0071e3;
+  background: #ffd280;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(41, 151, 255, 0.3);
+  box-shadow: 0 5px 15px rgba(255, 231, 193, 0.3);
 }
 
 .booking-cta {
   text-align: center;
-  background: linear-gradient(135deg, #2997ff, #0071e3);
+  background: linear-gradient(135deg, #ffe7c1, #ffd280);
   background-size: cover;
   background-position: center;
   border-radius: 20px;
   padding: 60px 30px;
   margin-top: 60px;
-  color: #fff;
+  color: #000;
 }
 
 .booking-cta h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #fff;
+  color: #000;
   font-weight: 600;
 }
 
 .booking-cta p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: #e0e0e0;
+  color: #333;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -229,20 +269,20 @@
 }
 
 .category-btn {
-  background: #f2f2f7;
-  border: none;
-  color: #1d1d1f;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
+    padding: 10px 25px;
+    background: transparent;
+    color: #f5f5f5;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .category-btn.active {
-  background: #06c;
-  color: #fff;
-}
+  background: linear-gradient(45deg, #c59d5f, #d4af37);
+  color: #0a0a0a;
+  border-color: #d4af37;
 
 .category-btn:hover {
   background: #e5e5ea;
@@ -250,7 +290,113 @@
 }
 
 .category-btn.active:hover {
-  background: #007aff;
+  background: linear-gradient(45deg, #c59d5f, #d4af37);
+  color: #0a0a0a;
+  border-color: #d4af37;
+}
+
+.price-list-section {
+  margin-top: 80px;
+  padding: 40px;
+  background-color: #1c1c1e;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(255,255,255,0.05);
+}
+
+.price-list-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.price-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.price-category-btn {
+  background: #1c1c1e;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.price-category-btn.active {
+  background: #ffe7c1;
+  color: #000;
+}
+
+.price-category-btn:hover {
+  background: #2c2c2e;
+}
+
+.price-list-table {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #2c2c2e;
+  transition: all 0.3s ease;
+}
+
+.price-item:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+  transform: translateX(5px);
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
+}
+
+.price-item:last-child {
+  border-bottom: none;
+}
+
+.price-item-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.price-item-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #d4af37;
+}
+
+.price-category-title {
+  font-size: 1.8rem;
+  margin: 40px 0 20px;
+  color: #d4af37;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.price-category-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(45deg, #c59d5f, #d4af37);
 }
 
 @media (max-width: 1200px) {
@@ -261,16 +407,25 @@
 
 @media (max-width: 768px) {
   .services-page {
-    padding: 100px 0;
+    padding: 0 0 60px;
   }
   
+  .services-header h1 {
+    font-size: 2rem;
+  }
+  
+  .services-header p {
+    font-size: 1rem;
+  }
+
   .services-page .section-title h1 {
     font-size: 2.5rem;
   }
-  
+
   .category-title {
     font-size: 1.8rem;
   }
+
   
   .service-item {
     flex-direction: column;
@@ -292,4 +447,4 @@
   .booking-cta p {
     font-size: 1rem;
   }
-}
+}}
