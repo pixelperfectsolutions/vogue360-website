@@ -138,7 +138,7 @@ const Services = () => {
           <motion.div
             variants={fadeInUp}
           >
-            <Link to="/contact" className="btn btn-large">Book Appointment</Link>
+            <a href="https://wa.me/919944471130" className="btn btn-large" target="_blank" rel="noopener noreferrer">Book Appointment</a>
           </motion.div>
         </motion.div>
       </div>

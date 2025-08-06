@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX } from 'react-icons/fi';
-import logoImage from '../assets/logo.jpg';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiMenu, FiX } from "react-icons/fi";
+import logoImage from "../assets/logo.jpg";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,8 +22,8 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -31,30 +31,30 @@ const Navbar = () => {
   }, [location]);
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Services', path: '/services' },
-    { name: 'About', path: '/about' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Contact', path: '/contact' }
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "About", path: "/about" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <motion.nav 
-      className={`navbar ${scrolled ? 'scrolled' : ''}`}
+    <motion.nav
+      className={`navbar ${scrolled ? "scrolled" : ""}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ 
+      transition={{
         type: "spring",
         stiffness: 100,
-        damping: 20
+        damping: 20,
       }}
     >
       <div className="container">
-        <motion.div 
+        <motion.div
           className="logo"
-          whileHover={{ 
+          whileHover={{
             scale: 1.05,
-            boxShadow: "0 0 10px rgba(212, 175, 55, 0.5)"
+            boxShadow: "0 0 10px rgba(212, 175, 55, 0.5)",
           }}
           transition={{ type: "spring", stiffness: 300 }}
         >
@@ -62,30 +62,35 @@ const Navbar = () => {
             <img src={logoImage} alt="Vouge360 Logo" className="logo-image" />
           </Link>
         </motion.div>
-        
-        <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+
+        <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
           {navItems.map((item, index) => (
-            <motion.li 
+            <motion.li
               key={item.name}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ 
+              transition={{
                 delay: index * 0.1,
                 type: "spring",
-                stiffness: 300
+                stiffness: 300,
               }}
-              className={location.pathname === item.path ? 'active' : ''}
+              className={location.pathname === item.path ? "active" : ""}
               whileHover={{ y: -5 }}
             >
               <Link to={item.path}>{item.name}</Link>
             </motion.li>
           ))}
         </ul>
-        
-        <a href="tel:+1234567890" className="btn cta-button">
+
+        <a
+          href="https://wa.me/+919944471130"
+          className="btn cta-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           CALL NOW
         </a>
-        
+
         <div className="menu-icon" onClick={toggleMenu}>
           <AnimatePresence mode="wait">
             {isMenuOpen ? (

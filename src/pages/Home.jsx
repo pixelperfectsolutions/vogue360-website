@@ -94,7 +94,7 @@ const Home = () => {
               className="hero-buttons"
             >
               <Link to="/services" className="btn btn-primary">Our Services</Link>
-              <Link to="/contact" className="btn btn-secondary">Book Appointment</Link>
+              <a href="https://wa.me/919944471130" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">Book Appointment</a>
             </motion.div>
           </div>
         </div>
@@ -196,7 +196,7 @@ const Home = () => {
           >
             <h2>Ready for Your Transformation?</h2>
             <p>Book your appointment today and experience the Vouge360 difference</p>
-            <Link to="/contact" className="btn btn-large">Book Now</Link>
+            <a href="https://wa.me/919944471130" className="btn btn-large" target="_blank" rel="noopener noreferrer">Book Now</a>
           </motion.div>
         </div>
       </section>

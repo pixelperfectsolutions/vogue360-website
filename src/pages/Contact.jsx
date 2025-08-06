@@ -47,12 +47,12 @@ const Contact = () => {
     {
       icon: <FiPhone />,
       title: "Call Us",
-      details: "+91 9876543210"
+      details: "+91 9944471130"
     },
     {
       icon: <FiMail />,
-      title: "Email Us",
-      details: "info@vouge360.in"
+      title: "WhatsApp Us",
+      details: "+91 9944471130"
     },
     {
       icon: <FiClock />,

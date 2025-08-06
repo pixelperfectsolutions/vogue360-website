@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiInstagram, FiFacebook, FiTwitter, FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
+import { FiInstagram, FiFacebook, FiTwitter, FiPhone, FiMail, FiMapPin, FiMessageSquare } from 'react-icons/fi';
 
 const Footer = () => {
   return (
@@ -75,7 +75,8 @@ const Footer = () => {
             <h3>Contact Us</h3>
             <div className="contact-info">
               <p><FiMapPin /> 123 Luxury Street, Mumbai, India</p>
-              <p><FiPhone /> +91 9876543210</p>
+              <p><FiPhone /> +91 9944471130</p>
+              <p><FiMessageSquare /> <a href="https://wa.me/919944471130" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></p>
               <p><FiMail /> info@vouge360.in</p>
             </div>
           </div>
