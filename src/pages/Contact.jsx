@@ -139,8 +139,10 @@ const Contact = () => {
             </div>
 
             <div className="map-container">
+              {/* TODO: Add Google Maps embed or map image here */}
               <div className="map-placeholder">
-                <p>Map Location</p>
+                <p className="placeholder-text">Google Maps Location</p>
+                <p className="placeholder-desc">Embed Google Maps showing salon location</p>
               </div>
             </div>
           </motion.div>

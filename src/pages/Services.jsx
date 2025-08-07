@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import './Services.css';
+import servicesImage from '../assets/images/services page.jpg';
 
 const Services = () => {
   useEffect(() => {
@@ -22,6 +23,14 @@ const Services = () => {
     'Derma Facials'
   ];
   
+  // Add a banner image at the top of the services page
+  const serviceBanner = {
+    title: "Our Premium Services",
+    subtitle: "Discover the full range of luxury treatments at Vouge360",
+    // TODO: Add a high-quality salon services banner image here
+    imageDescription: "Elegant salon services banner showing premium treatments"
+  };
+
   const servicesList = [
     {
       id: 1,
@@ -383,6 +392,23 @@ const Services = () => {
   return (
     <div className="services-page page-container">
       <div className="container">
+        {/* Services Banner Section */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={staggerContainer}
+          className="services-banner"
+        >
+          <img src={servicesImage} alt="Luxury salon services" className="banner-image" />
+          <motion.div
+            variants={fadeInUp}
+            className="banner-content"
+          >
+            <h1>{serviceBanner.title}</h1>
+            <p>{serviceBanner.subtitle}</p>
+          </motion.div>
+        </motion.div>
         {/* Top Services Cards */}
         <motion.div
           initial="hidden"

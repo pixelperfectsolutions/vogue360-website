@@ -83,10 +83,8 @@ const Navbar = () => {
         </ul>
 
         <a
-          href="https://wa.me/+919944471130"
+          href="tel:+919944471130"
           className="btn cta-button"
-          target="_blank"
-          rel="noopener noreferrer"
         >
           CALL NOW
         </a>

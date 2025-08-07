@@ -6,11 +6,42 @@ import slider1 from '../assets/slider1.jpg';
 import slider2 from '../assets/slider2.jpg';
 import slider3 from '../assets/slider3.jpeg';
 import slider4 from '../assets/slider4.avif';
+import homeImage from '../assets/images/home page.webP';
 
 const Home = () => {
   const sectionRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const sliderImages = [slider1, slider2, slider3, slider4];
+  
+  const sliderContent = [
+    {
+      image: slider1,
+      title: "Luxury Beyond the Mirror",
+      subtitle: "VOGUE 360 – Because You Deserve the Best",
+      cta: "Book Now",
+      ctaLink: "https://wa.me/919944471130"
+    },
+    {
+      image: slider2,
+      title: "From Classic to Contemporary",
+      subtitle: "Flawless Hair, Radiant Skin, and Pure Relaxation Await",
+      cta: "Our Services",
+      ctaLink: "/services"
+    },
+    {
+      image: slider3,
+      title: "Redefining Elegance, One Style at a Time",
+      subtitle: "Step into the World of Premium Beauty & Care",
+      cta: "View Gallery",
+      ctaLink: "/gallery"
+    },
+    {
+      image: slider4,
+      title: "Unveil Your True Beauty",
+      subtitle: "Luxury Hair & Skin Experiences Tailored Just for You",
+      cta: "Contact Us",
+      ctaLink: "/contact"
+    }
+  ];
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -19,11 +50,11 @@ const Home = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % sliderImages.length);
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % sliderContent.length);
     }, 5000); // Change slide every 5 seconds
 
     return () => clearInterval(interval);
-  }, [sliderImages.length]);
+  }, [sliderContent.length]);
 
   const services = [
     {
@@ -76,40 +107,43 @@ const Home = () => {
       {/* Hero Section with Slider */}
       <section className="hero">
         <div className="hero-slider">
-          <div className="slider-container">
-            {sliderImages.map((image, index) => (
+          {/* Slider images */}
+          {sliderContent.map((slide, index) => (
+            <div 
+              key={index} 
+              className={`slider-item ${index === currentSlide ? 'active' : ''}`}
+            >
               <img 
-                key={index} 
-                src={image} 
+                src={slide.image} 
                 alt={`Vouge360 Salon ${index + 1}`} 
-                className={`slider-image ${index === currentSlide ? 'active' : ''}`} 
+                className="slider-image" 
               />
+              <div className="slider-overlay"></div>
+              
+              {/* Content for this slide */}
+              <div className="slider-content">
+                <h1>{slide.title}</h1>
+                <p>{slide.subtitle}</p>
+                <div className="slider-buttons">
+                  {slide.ctaLink.startsWith('http') ? (
+                    <a href={slide.ctaLink} className="btn btn-primary" target="_blank" rel="noopener noreferrer">{slide.cta}</a>
+                  ) : (
+                    <Link to={slide.ctaLink} className="btn btn-primary">{slide.cta}</Link>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+          
+          {/* Slider indicators */}
+          <div className="slider-indicators">
+            {sliderContent.map((_, index) => (
+              <div 
+                key={index}
+                className={`indicator ${index === currentSlide ? 'active' : ''}`}
+                onClick={() => setCurrentSlide(index)}
+              ></div>
             ))}
-          </div>
-          <div className="hero-content">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              Experience Luxury <br />Transformation at <span>Vouge360</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Where artistry meets precision. Our expert stylists create personalized looks that enhance your natural beauty.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="hero-buttons"
-            >
-              <Link to="/services" className="btn btn-primary">Our Services</Link>
-              <a href="https://wa.me/919944471130" className="btn btn-secondary" target="_blank" rel="noopener noreferrer">Book Appointment</a>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -192,7 +226,7 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="about-image"
             >
-              <div className="image-placeholder"></div>
+              <img src={homeImage} alt="Elegant salon interior" className="about-img" />
             </motion.div>
           </div>
         </div>

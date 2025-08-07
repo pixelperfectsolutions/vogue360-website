@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './About.css';
+import aboutImage from '../assets/images/about page.avif';
 
 const About = () => {
   useEffect(() => {
@@ -121,7 +122,7 @@ const About = () => {
               transition={{ duration: 0.8 }}
               className="story-image"
             >
-              <div className="image-placeholder"></div>
+              <img src={aboutImage} alt="Salon history and journey" className="story-img" />
             </motion.div>
           </div>
         </section>
@@ -206,7 +207,11 @@ const About = () => {
                 className="team-member"
               >
                 <div className="member-image">
-                  <div className="image-placeholder"></div>
+                  {/* TODO: Add team member portrait photo here */}
+                  <div className="image-placeholder">
+                    <p className="placeholder-text">Team Member Photo</p>
+                    <p className="placeholder-desc">Professional portrait of {member.name}</p>
+                  </div>
                 </div>
                 <div className="member-info">
                   <h3>{member.name}</h3>
