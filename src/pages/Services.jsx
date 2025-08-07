@@ -23,11 +23,10 @@ const Services = () => {
     'Derma Facials'
   ];
   
-  // Add a banner image at the top of the services page
+  // Banner content for the services page
   const serviceBanner = {
-    title: "Our Premium Services",
-    subtitle: "Discover the full range of luxury treatments at Vouge360",
-    // TODO: Add a high-quality salon services banner image here
+    title: "Our Services",
+    subtitle: "Welcome to VOGUE 360 – where beauty meets wellness.\nExplore our all-in-one destination for hair, beauty, skin, nails and rejuvenation treatments designed to bring out your best self.",
     imageDescription: "Elegant salon services banner showing premium treatments"
   };
 
@@ -399,14 +398,24 @@ const Services = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={staggerContainer}
           className="services-banner"
+          style={{
+            backgroundImage: `url(${servicesImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
         >
-          <img src={servicesImage} alt="Luxury salon services" className="banner-image" />
+          <div className="banner-overlay"></div>
           <motion.div
             variants={fadeInUp}
             className="banner-content"
           >
             <h1>{serviceBanner.title}</h1>
-            <p>{serviceBanner.subtitle}</p>
+            <p>{serviceBanner.subtitle.split('\n').map((text, i) => (
+              <React.Fragment key={i}>
+                {text}
+                {i === 0 && <br />}
+              </React.Fragment>
+            ))}</p>
           </motion.div>
         </motion.div>
         {/* Top Services Cards */}
@@ -419,11 +428,10 @@ const Services = () => {
         >
           <motion.div variants={fadeInUp} className="services-header-content">
             <motion.h1 variants={fadeInUp} className="section-title">
-              Our Services
+              Featured Services
             </motion.h1>
             <motion.p variants={fadeInUp}>
-              Welcome to <b>VOGUE 360</b> – where beauty meets wellness.<br/>
-              Explore our all-in-one destination for hair, beauty, skin, nails and rejuvenation treatments designed to bring out your best self.
+              Discover our most popular treatments and services
             </motion.p>
           </motion.div>
 
@@ -443,7 +451,7 @@ const Services = () => {
           {/* Featured Services - Removed as per user request */}
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -462,7 +470,7 @@ const Services = () => {
           >
             Experience luxury and transformation with our expertly crafted services
           </motion.p>
-        </motion.div>
+        </motion.div> */}
 
         <div className="services-list">
           {filteredServices.map((service, index) => (

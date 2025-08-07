@@ -42,7 +42,7 @@ const Contact = () => {
     {
       icon: <FiMapPin />,
       title: "Our Location",
-      details: "123 Luxury Street, Mumbai, India"
+      details: "No. 21/C2, 2nd floor, Peons Colony, Mettupalayam Road, Kavundampalayam, Coimbatore – 641 030"
     },
     {
       icon: <FiPhone />,
@@ -139,10 +139,37 @@ const Contact = () => {
             </div>
 
             <div className="map-container">
-              {/* TODO: Add Google Maps embed or map image here */}
-              <div className="map-placeholder">
-                <p className="placeholder-text">Google Maps Location</p>
-                <p className="placeholder-desc">Embed Google Maps showing salon location</p>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.3132349657244!2d76.93720!3d11.02970!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af5aaaaaab%3A0xaaaaaaaaaaaaaaaa!2sVOGUE%20360!5e0!3m2!1sen!2sin!4v1659432145185!5m2!1sen!2sin" 
+                width="100%" 
+                height="450" 
+                style={{ border: 0, borderRadius: '8px' }} 
+                allowFullScreen="" 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="VOGUE 360 Salon Location"
+              ></iframe>
+              <div className="map-link">
+                <a 
+                  href="https://maps.app.goo.gl/JTBvtfg9Ct9EFim46" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn btn-primary map-button"
+                  style={{
+                    display: 'inline-block',
+                    marginTop: '15px',
+                    padding: '10px 20px',
+                    backgroundColor: '#d4af37',
+                    color: '#000',
+                    borderRadius: '30px',
+                    textDecoration: 'none',
+                    fontWeight: '600',
+                    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+                    transition: 'all 0.3s ease'
+                  }}
+                >
+                  <FiMapPin style={{ marginRight: '8px' }} /> Open in Google Maps
+                </a>
               </div>
             </div>
           </motion.div>

@@ -170,58 +170,7 @@ const About = () => {
           </motion.div>
         </section>
 
-        {/* Team Section */}
-        <section className="team-section">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={staggerContainer}
-            className="section-title"
-          >
-            <motion.h2
-              variants={fadeInUp}
-            >
-              Meet Our Experts
-            </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              className="section-subtitle"
-            >
-              Internationally trained professionals dedicated to your transformation
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={staggerContainer}
-            className="team-grid"
-          >
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                whileHover={{ y: -10 }}
-                className="team-member"
-              >
-                <div className="member-image">
-                  {/* TODO: Add team member portrait photo here */}
-                  <div className="image-placeholder">
-                    <p className="placeholder-text">Team Member Photo</p>
-                    <p className="placeholder-desc">Professional portrait of {member.name}</p>
-                  </div>
-                </div>
-                <div className="member-info">
-                  <h3>{member.name}</h3>
-                  <p className="role">{member.role}</p>
-                  <p className="experience">{member.experience} experience</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </section>
+        {/* Team Section - Commented out as requested */}
       </div>
     </div>
   );

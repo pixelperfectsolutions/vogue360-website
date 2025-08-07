@@ -74,9 +74,10 @@ const Footer = () => {
           <div className="footer-section">
             <h3>Contact Us</h3>
             <div className="contact-info">
-              <p><FiMapPin /> 123 Luxury Street, Mumbai, India</p>
-              <p><FiPhone /> +91 9944471130</p>
+              <p><FiMapPin /> No. 21/C2, 2nd floor, Peons Colony, Mettupalayam Road, Kavundampalayam, Coimbatore – 641 030</p>
+              <p><FiPhone /> <a href="tel:+919944471130" style={{ color: 'inherit', textDecoration: 'none' }}>+91 9944471130</a></p>
               <p><FiMessageSquare /> <a href="https://wa.me/919944471130" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></p>
+              <p><a href="https://maps.app.goo.gl/JTBvtfg9Ct9EFim46" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', color: '#d4af37', marginTop: '10px', fontWeight: '600' }}><FiMapPin style={{ marginRight: '5px' }} /> View on Google Maps</a></p>
               <p><FiMail /> info@vouge360.in</p>
             </div>
           </div>
@@ -84,6 +85,7 @@ const Footer = () => {
         
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Vouge360.in. All rights reserved.</p>
+          <p>Designed by <a href="https://pixelperfect.co.in/" target="_blank" rel="noopener noreferrer" style={{ color: '#d4af37', textDecoration: 'none', fontWeight: '500' }}>Pixel Perfect Software Solutions</a></p>
         </div>
       </div>
     </motion.footer>
