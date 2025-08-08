@@ -459,6 +459,10 @@
     padding: 0 0 60px;
   }
 
+  .services-header {
+    padding: 40px 0;
+  }
+
   .services-header h1 {
     font-size: 2rem;
   }
@@ -468,14 +472,13 @@
   }
 
   .services-page .section-title h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .category-title {
     font-size: 1.8rem;
   }
 
-  
   .service-item {
     flex-direction: column;
     align-items: flex-start;
@@ -487,6 +490,7 @@
   
   .booking-cta {
     padding: 40px 20px;
+    margin-top: 40px;
   }
   
   .booking-cta h2 {
@@ -494,6 +498,96 @@
   }
   
   .booking-cta p {
+    font-size: 1rem;
+  }
+
+  .services-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 24px 20px;
+  }
+
+  .price-list-section {
+    padding: 30px 20px;
+    margin-top: 40px;
+  }
+
+  .price-list-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .price-category-title {
+    font-size: 1.5rem;
+  }
+
+  .services-banner {
+    height: 300px;
+  }
+
+  .banner-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .banner-content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-page {
+    padding: 0 0 40px;
+  }
+
+  .services-header {
+    padding: 30px 0;
+  }
+
+  .services-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .services-page .section-title h1 {
+    font-size: 1.8rem;
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .service-card p {
+    font-size: 1rem;
+  }
+
+  .booking-cta h2 {
+    font-size: 1.8rem;
+  }
+
+  .price-list-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .price-item-name,
+  .price-item-value {
+    font-size: 1rem;
+  }
+
+  .services-banner {
+    height: 250px;
+  }
+
+  .banner-content h1 {
+    font-size: 2rem;
+  }
+
+  .banner-content p {
     font-size: 1rem;
   }
 }

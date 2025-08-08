@@ -318,12 +318,16 @@
   .about-image {
     height: 400px;
   }
+  
+  .slider-content h1 {
+    font-size: 3.2rem;
+  }
 }
 
 @media (max-width: 768px) {
   .hero {
     height: auto;
-    padding: 150px 0 100px;
+    padding: 120px 0 80px;
   }
   
   .hero h1 {
@@ -341,6 +345,7 @@
   
   .services-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
   
   .cta-content h2 {
@@ -349,5 +354,89 @@
   
   .cta-content p {
     font-size: 1rem;
+  }
+  
+  .slider-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .slider-content p {
+    font-size: 1rem;
+  }
+  
+  .service-card {
+    padding: 24px 20px;
+  }
+  
+  .service-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .about-section {
+    padding: 60px 0;
+  }
+  
+  .about-text h2 {
+    font-size: 2rem;
+  }
+  
+  .cta-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 100px 0 60px;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .slider-content h1 {
+    font-size: 2rem;
+  }
+  
+  .slider-content p {
+    font-size: 0.9rem;
+  }
+  
+  .btn-large {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .service-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .service-card p {
+    font-size: 0.9rem;
+  }
+  
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .about-text p {
+    font-size: 0.9rem;
+  }
+  
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .slider-indicators {
+    bottom: 15px;
+  }
+  
+  .indicator {
+    width: 10px;
+    height: 10px;
   }
 }
