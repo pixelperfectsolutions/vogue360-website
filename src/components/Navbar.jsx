@@ -85,7 +85,7 @@ const Navbar = () => {
 
         <a
           href="tel:+919944471130"
-          className="btn cta-button hidden md:block"
+          className="btn cta-button desktop-only"
         >
           CALL NOW
         </a>
