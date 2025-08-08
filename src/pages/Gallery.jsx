@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet';
 import './Gallery.css';
 
 const Gallery = () => {
@@ -42,6 +43,21 @@ const Gallery = () => {
 
   return (
     <div className="gallery-page page-container">
+      <Helmet>
+        <title>Gallery - Vogue360 Salon | Hair & Beauty Transformations</title>
+        <meta name="description" content="View our gallery of haircuts, coloring, spa treatments, and beauty services at Vogue360 Salon in Coimbatore. See real transformations and premium services." />
+        <meta name="keywords" content="Vogue360 gallery, hair transformations, beauty services, salon gallery, Coimbatore, haircuts, coloring, spa treatments" />
+        <meta property="og:title" content="Gallery - Vogue360 Salon | Hair & Beauty Transformations" />
+        <meta property="og:description" content="View our gallery of haircuts, coloring, spa treatments, and beauty services at Vogue360 Salon in Coimbatore. See real transformations and premium services." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.vogue360.com/gallery" />
+        <meta property="og:image" content="/src/assets/logo.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Gallery - Vogue360 Salon" />
+        <meta name="twitter:description" content="View our gallery of haircuts, coloring, spa treatments, and beauty services at Vogue360 Salon in Coimbatore. See real transformations and premium services." />
+        <meta name="twitter:image" content="/src/assets/logo.jpg" />
+        <link rel="canonical" href="https://www.vogue360.com/gallery" />
+      </Helmet>
       <div className="container">
         <motion.div
           initial="hidden"

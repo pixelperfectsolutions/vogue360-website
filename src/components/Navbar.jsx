@@ -80,6 +80,24 @@ const Navbar = () => {
               <Link to={item.path}>{item.name}</Link>
             </motion.li>
           ))}
+          <motion.li
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.5,
+              type: "spring",
+              stiffness: 300,
+            }}
+            whileHover={{ y: -5 }}
+            className="mobile-cta"
+          >
+            <a
+              href="tel:+919944471130"
+              className="btn cta-button-mobile"
+            >
+              CALL NOW
+            </a>
+          </motion.li>
         </ul>
 
         <a

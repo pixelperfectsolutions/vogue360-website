@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet';
 import './Services.css';
 import servicesImage from '../assets/images/services page.jpg';
 
@@ -390,107 +391,82 @@ const Services = () => {
 
   return (
     <div className="services-page page-container">
-      <div className="container">
-        {/* Services Banner Section */}
+      <Helmet>
+        <title>Our Services - Vogue360 Salon | Premium Hair & Beauty Treatments</title>
+        <meta name="description" content="Discover our premium hair, skin, and beauty services at Vogue360 Salon in Coimbatore. From haircuts to facials, we offer luxury treatments with expert stylists." />
+        <meta name="keywords" content="Vogue360 services, hair services, beauty treatments, skin care, facials, haircuts, styling, makeup, nail services, Coimbatore salon" />
+        <meta property="og:title" content="Our Services - Vogue360 Salon | Premium Hair & Beauty Treatments" />
+        <meta property="og:description" content="Discover our premium hair, skin, and beauty services at Vogue360 Salon in Coimbatore. From haircuts to facials, we offer luxury treatments with expert stylists." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.vogue360.com/services" />
+        <meta property="og:image" content="/src/assets/logo.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Services - Vogue360 Salon" />
+        <meta name="twitter:description" content="Discover our premium hair, skin, and beauty services at Vogue360 Salon in Coimbatore. From haircuts to facials, we offer luxury treatments with expert stylists." />
+        <meta name="twitter:image" content="/src/assets/logo.jpg" />
+        <link rel="canonical" href="https://www.vogue360.com/services" />
+      </Helmet>
+      {/* Services Banner Section */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+        className="services-banner"
+        style={{
+          backgroundImage: `url(${servicesImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <div className="banner-overlay"></div>
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={staggerContainer}
-          className="services-banner"
-          style={{
-            backgroundImage: `url(${servicesImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
+          variants={fadeInUp}
+          className="banner-content"
         >
-          <div className="banner-overlay"></div>
-          <motion.div
-            variants={fadeInUp}
-            className="banner-content"
-          >
-            <h1>{serviceBanner.title}</h1>
-            <p>{serviceBanner.subtitle.split('\n').map((text, i) => (
-              <React.Fragment key={i}>
-                {text}
-                {i === 0 && <br />}
-              </React.Fragment>
-            ))}</p>
-          </motion.div>
+          <h1>{serviceBanner.title}</h1>
+          <p>{serviceBanner.subtitle.split('\n').map((text, i) => (
+            <React.Fragment key={i}>
+              {text}
+              {i === 0 && <br />}
+            </React.Fragment>
+          ))}</p>
         </motion.div>
-        {/* Top Services Cards */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={staggerContainer}
-          className="services-header"
-        >
-          <motion.div variants={fadeInUp} className="services-header-content">
-            <motion.h1 variants={fadeInUp} className="section-title">
-              Featured Services
-            </motion.h1>
-            <motion.p variants={fadeInUp}>
-              Discover our most popular treatments and services
-            </motion.p>
-          </motion.div>
-
-          {/* Service Categories */}
-          <div className="service-categories">
-            {serviceCategories.map((category, index) => (
-              <button 
-                key={index} 
-                className={`category-btn ${activeCategory === category ? 'active' : ''}`}
-                onClick={() => setActiveCategory(category)}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+      </motion.div>
+      {/* Top Services Cards */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+        className="services-header"
+      >
+        <motion.div variants={fadeInUp} className="services-header-content">
+          <motion.h1 variants={fadeInUp} className="section-title">
+            Featured Services
+          </motion.h1>
           
           {/* Featured Services - Removed as per user request */}
-        </motion.div>
-
-        {/* <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={staggerContainer}
-          className="section-title"
-        >
-          <motion.h1
-            variants={fadeInUp}
-            className="text-center"
-          >
-            Our Premium Services
-          </motion.h1>
-          <motion.p
-            variants={fadeInUp}
-            className="section-subtitle"
-          >
-            Experience luxury and transformation with our expertly crafted services
+          <motion.p variants={fadeInUp}>
+            Discover our most popular treatments and services
           </motion.p>
-        </motion.div> */}
-
-        <div className="services-list">
-          {filteredServices.map((service, index) => (
-            <motion.div
-              key={service.id}
-              variants={fadeInUp}
-              whileHover={{ y: -5 }}
-              className="service-card"
+        </motion.div>
+      </motion.div>
+      {/* Service Categories */}
+      <div className="service-categories">
+          {serviceCategories.map((category, index) => (
+            <button 
+              key={index} 
+              className={`category-btn ${activeCategory === category ? 'active' : ''}`}
+              onClick={() => setActiveCategory(category)}
             >
-              <div className="service-badge">{service.category}</div>
-              <div className="service-icon">{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.desc}</p>
-              <a href="tel:+919944471130" className="call-now-btn">CALL NOW</a>
-            </motion.div>
+              {category}
+            </button>
           ))}
         </div>
 
         {/* Price List Section */}
-        <motion.div
+      <motion.div
           initial="visible"
           animate="visible"
           variants={staggerContainer}
@@ -695,31 +671,31 @@ const Services = () => {
             </div>
           </motion.div>
         </motion.div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={staggerContainer}
-          className="booking-cta"
-        >
-          <motion.h2
-            variants={fadeInUp}
-          >
-            Ready for Your Transformation?
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-          >
-            Book your appointment today and experience the Vouge360 difference
-          </motion.p>
+        {/* CTA Section */}
+      <div className="container">
           <motion.div
-            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={staggerContainer}
           >
-            <a href="https://wa.me/919944471130" className="btn btn-large" target="_blank" rel="noopener noreferrer">Book Appointment</a>
+            <motion.h2
+              variants={fadeInUp}
+            >
+              Ready for Your Transformation?
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
+            >
+              Book your appointment today and experience the Vouge360 difference
+            </motion.p>
+            <motion.div
+              variants={fadeInUp}
+            >
+              <a href="https://wa.me/919944471130" className="btn btn-large" target="_blank" rel="noopener noreferrer">Book Appointment</a>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      </div>
+        </div>
     </div>
   );
 };

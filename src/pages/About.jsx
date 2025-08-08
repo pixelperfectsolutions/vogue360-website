@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet';
 import './About.css';
 import aboutImage from '../assets/images/about page.avif';
 
@@ -65,6 +66,21 @@ const About = () => {
 
   return (
     <div className="about-page page-container">
+      <Helmet>
+        <title>About Us - Vogue360 Salon | Premium Hair & Beauty Services</title>
+        <meta name="description" content="Learn about Vogue360 Salon in Coimbatore, our story, values, and commitment to providing premium hair and beauty services with expert stylists." />
+        <meta name="keywords" content="Vogue360, about us, salon story, beauty salon, Coimbatore, hair salon, our values, expert stylists" />
+        <meta property="og:title" content="About Us - Vogue360 Salon | Premium Hair & Beauty Services" />
+        <meta property="og:description" content="Learn about Vogue360 Salon in Coimbatore, our story, values, and commitment to providing premium hair and beauty services with expert stylists." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.vogue360.com/about" />
+        <meta property="og:image" content="/src/assets/logo.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us - Vogue360 Salon" />
+        <meta name="twitter:description" content="Learn about Vogue360 Salon in Coimbatore, our story, values, and commitment to providing premium hair and beauty services with expert stylists." />
+        <meta name="twitter:image" content="/src/assets/logo.jpg" />
+        <link rel="canonical" href="https://www.vogue360.com/about" />
+      </Helmet>
       <div className="container">
         {/* Hero Section */}
         <motion.div

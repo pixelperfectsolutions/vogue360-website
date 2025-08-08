@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet';
 import './Home.css';
 import slider1 from '../assets/slider1.jpg';
 import slider2 from '../assets/slider2.jpg';
@@ -104,6 +105,21 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Helmet>
+        <title>Vogue360 Salon - Premium Hair & Beauty Services in Coimbatore</title>
+        <meta name="description" content="Experience luxury beauty treatments at Vogue360 Salon in Coimbatore. Expert stylists, premium products, and personalized services for hair, skin, and nails." />
+        <meta name="keywords" content="Vogue360, salon, hair salon, beauty salon, Coimbatore, haircuts, styling, facials, skin care, makeup, nail services" />
+        <meta property="og:title" content="Vogue360 Salon - Premium Hair & Beauty Services in Coimbatore" />
+        <meta property="og:description" content="Experience luxury beauty treatments at Vogue360 Salon in Coimbatore. Expert stylists, premium products, and personalized services for hair, skin, and nails." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.vogue360.com" />
+        <meta property="og:image" content="/src/assets/logo.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Vogue360 Salon - Premium Hair & Beauty Services" />
+        <meta name="twitter:description" content="Experience luxury beauty treatments at Vogue360 Salon in Coimbatore. Expert stylists, premium products, and personalized services for hair, skin, and nails." />
+        <meta name="twitter:image" content="/src/assets/logo.jpg" />
+        <link rel="canonical" href="https://www.vogue360.com" />
+      </Helmet>
       {/* Hero Section with Slider */}
       <section className="hero">
         <div className="hero-slider">

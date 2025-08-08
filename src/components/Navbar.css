@@ -72,6 +72,16 @@
     display: block;
 }
 
+/* Hide mobile CTA by default */
+.mobile-cta {
+    display: none;
+}
+
+/* 'CALL NOW' button outside menu (cta-button) remains visible on desktop */
+.cta-button-mobile {
+    display: inline-block;
+}
+
 .menu-icon {
     display: none;
     font-size: 1.5rem;
@@ -108,5 +118,18 @@
     
     .cta-button {
         display: none;
+    }
+    
+    .cta-button-mobile {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    /* Show mobile CTA inside dropdown */
+    .mobile-cta {
+        display: block;
+        margin-top: 10px;
     }
 }

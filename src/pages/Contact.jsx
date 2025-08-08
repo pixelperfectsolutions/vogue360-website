@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiPhone, FiMail, FiMapPin, FiClock } from 'react-icons/fi';
+import { Helmet } from 'react-helmet';
 import './Contact.css';
 
 const Contact = () => {
@@ -85,6 +86,21 @@ const Contact = () => {
 
   return (
     <div className="contact-page page-container">
+      <Helmet>
+        <title>Contact Us - Vogue360 Salon | Book Your Appointment</title>
+        <meta name="description" content="Contact Vogue360 Salon in Coimbatore for premium hair and beauty services. Book your appointment online or visit us at our location in Kavundampalayam." />
+        <meta name="keywords" content="Vogue360, contact us, book appointment, salon Coimbatore, hair salon, beauty salon, Kavundampalayam, phone number, email" />
+        <meta property="og:title" content="Contact Us - Vogue360 Salon | Book Your Appointment" />
+        <meta property="og:description" content="Contact Vogue360 Salon in Coimbatore for premium hair and beauty services. Book your appointment online or visit us at our location in Kavundampalayam." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.vogue360.com/contact" />
+        <meta property="og:image" content="/src/assets/logo.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us - Vogue360 Salon" />
+        <meta name="twitter:description" content="Contact Vogue360 Salon in Coimbatore for premium hair and beauty services. Book your appointment online or visit us at our location in Kavundampalayam." />
+        <meta name="twitter:image" content="/src/assets/logo.jpg" />
+        <link rel="canonical" href="https://www.vogue360.com/contact" />
+      </Helmet>
       <div className="container">
         <motion.div
           initial="hidden"
