@@ -89,11 +89,33 @@
 
 .menu-icon {
     display: none;
-    font-size: 1.5rem;
+    font-size: 2.2rem;
     cursor: pointer;
     color: #000000;
     margin-left: 15px;
+    margin-right: 15px;
+    z-index: 2001;
+    background: none;
+    position: relative;
 }
+
+@media (max-width: 991px) {
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 22px;
+        right: 25px;
+        z-index: 2001;
+        background: none;
+    }
+    .navbar .container {
+        position: relative;
+    }
+    .nav-links {
+        z-index: 2000;
+    }
+}
+
 
 @media (max-width: 991px) {
     .menu-icon {
