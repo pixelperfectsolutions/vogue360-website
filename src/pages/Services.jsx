@@ -465,6 +465,25 @@ const Services = () => {
           ))}
         </div>
 
+        {/* Services Card Grid */}
+        <div className="services-list">
+          {filteredServices.map(service => (
+            <motion.div
+              key={service.id}
+              className="service-card"
+              variants={fadeInUp}
+              whileHover={{ scale: 1.04 }}
+            >
+              <div className="service-icon">{service.icon}</div>
+              <div className="service-badge">{service.category}</div>
+              <h3>{service.title}</h3>
+              <p>{service.desc}</p>
+              <div className="service-price">{service.price}</div>
+              <a href="https://wa.me/919944471130" target="_blank" rel="noopener noreferrer" className="call-now-btn">Book Now</a>
+            </motion.div>
+          ))}
+        </div>
+
         {/* Price List Section */}
       <motion.div
           initial="visible"
