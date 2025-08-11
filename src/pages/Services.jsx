@@ -478,7 +478,7 @@ const Services = () => {
               <div className="service-badge">{service.category}</div>
               <h3>{service.title}</h3>
               <p>{service.desc}</p>
-              <div className="service-price">{service.price}</div>
+              
               <a href="https://wa.me/919944471130" target="_blank" rel="noopener noreferrer" className="call-now-btn">Book Now</a>
             </motion.div>
           ))}
