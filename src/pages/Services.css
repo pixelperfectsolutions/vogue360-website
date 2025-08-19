@@ -294,6 +294,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 500;
+  outline: none; /* remove default blue outline */
 }
 
 .category-btn.active {
@@ -306,9 +307,12 @@
   transform: translateY(-2px);
 }
 
+/* Active button hover should stay gold, not blue */
 .category-btn.active:hover {
-  background: #007aff;
+  background: #ffd27f; /* a nicer gold hover for active button */
+  color: #000;
 }
+
 
 .price-list-section {
   margin-top: 80px;
