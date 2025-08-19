@@ -32,7 +32,7 @@
 .footer-description {
   margin: 20px 0;
   line-height: 1.6;
-  color: #aaa;
+  color: #eee; /* lighter for readability */
 }
 
 .social-icons {
@@ -68,33 +68,48 @@
 }
 
 .footer-section ul li a {
-  color: #aaa;
+  color: #fff; /* changed from #aaa to white */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-section ul li a:hover {
-  color: #d4af37;
+  color: #d4af37; /* gold hover */
 }
 
 .contact-info p {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
-  color: #aaa;
+  color: #eee; /* lighter instead of #aaa */
   line-height: 1.6;
 }
 
 .contact-info svg {
   margin-right: 10px;
   color: #d4af37;
+  width: 24px;   /* set desired width */
+  height: 24px;  /* set desired height */
+  flex-shrink: 0; /* prevent shrinking in flex container */
+}
+
+.footer a,
+.footer a:visited,
+.footer a:active {
+  color: #fff; /* white by default */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #d4af37; /* gold on hover */
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  color: #777;
+  color: #bbb; /* softer gray for bottom text */
 }
 
 @media (max-width: 768px) {
