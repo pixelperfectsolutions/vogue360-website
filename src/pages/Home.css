@@ -1,128 +1,219 @@
-/* Hero Section */
-.hero {
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-  padding: 0 20px;
+/* =========================
+   Hero Section - Desktop
+   ========================= */
+   .hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    padding: 0 20px;
+  }
+  
+  /* Slider items */
+  .slider-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+  }
+  
+  .slider-item.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .slider-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .slider-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+  
+  /* Slider content */
+  .slider-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    max-width: 90%;
+    padding: 0 15px;
+    z-index: 10;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Buttons */
+  .slider-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Headings & Text */
+  .slider-content h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .slider-content h1 span {
+    color: #d4af37;
+  }
+  
+  .slider-content p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    max-width: 600px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* =========================
+     Placeholder styling
+     ========================= */
+  .image-placeholder {
+    background-color: #f0f0f0;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .placeholder-text {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .placeholder-desc {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* =========================
+     Mobile Adjustments
+  /* ========================= */
+/* ========================= */
+/* ========================= */
+/* ========================= */
+@media (max-width: 768px) {
+  /* Hide slider images & overlays on mobile */
+  .slider-image,
+  .slider-overlay {
+    display: none !important;
+  }
+
+  /* Hero adjustments */
+  .hero {
+    margin-top: 80px; /* match your header height */
+    height: auto;     /* let content define height */
+    padding: 0;
+    background: #000; /* keep black background */
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* 👈 prevent horizontal overflow */
+  }
+
+  /* Keep slider items overlapping like desktop */
+  .slider-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important; /* 👈 force full width */
+    max-width: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    overflow: hidden; /* 👈 stop children from spilling */
+  }
+
+  .slider-item.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+  }
+
+  /* Content */
+  .slider-content {
+    position: relative;
+    transform: none;
+    width: 100% !important; /* 👈 keep inside mobile screen */
+    max-width: 100%;
+    padding: 0 10px;
+    text-align: center;
+    color: #fff;
+    box-sizing: border-box;
+  }
+
+  .slider-content h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    word-wrap: break-word; /* 👈 long words won’t overflow */
+  }
+
+  .slider-content p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #ddd;
+  }
+
+  /* Buttons stacked */
+  .slider-buttons {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .slider-buttons .btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+  }
 }
 
-.hero-slider {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
 
-.slider-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
-}
-
-.slider-item.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.slider-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.slider-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-}
-
-.slider-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  width: 100%;
-  max-width: 800px;
-  padding: 0 20px;
-  z-index: 10;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.slider-buttons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* Image Placeholder Styling */
-.image-placeholder {
-  background-color: #f0f0f0;
-  border: 2px dashed #ccc;
-  border-radius: 8px;
-  height: 300px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  text-align: center;
-}
-
-.placeholder-text {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #555;
-}
-
-.placeholder-desc {
-  font-size: 0.9rem;
-  color: #777;
-}
-
-.slider-content h1 {
-  font-size: 4rem;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  color: #fff;
-  text-align: center;
-  width: 100%;
-}
-
-.slider-content h1 span {
-  color: #d4af37;
-}
-
-.slider-content p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #e0e0e0;
-  max-width: 600px;
-  text-align: center;
-  width: 100%;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 20px;
-}
 
 .btn-primary {
   background: linear-gradient(45deg, #c59d5f, #d4af37);
