@@ -14,7 +14,7 @@
 /* Mobile padding-top fix */
 @media (max-width: 768px) {
   .services-page {
-    padding: 100px 0 80px;
+    padding: 130px 0 80px;
   }
   
   .services-header {
