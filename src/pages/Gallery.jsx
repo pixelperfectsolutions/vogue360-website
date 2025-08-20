@@ -173,7 +173,7 @@ const Gallery = () => {
           variants={staggerContainer}
           className="gallery-grid"
         >
-          {galleryImages.map((image, index) => (
+          {galleryImages.map((image) => (
             <motion.div
               key={image.id}
               variants={fadeInUp}
@@ -181,7 +181,7 @@ const Gallery = () => {
               className="gallery-item"
             >
               <div className="image-wrapper">
-                <LazyImage src={image.src} alt={image.alt} />
+                <LazyImage src={image.src} alt={image.alt} className="gallery-image" />
                 <div className="overlay">
                   <div className="overlay-content">
                     <h3>{image.alt}</h3>
