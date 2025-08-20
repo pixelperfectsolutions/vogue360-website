@@ -9,6 +9,12 @@ const Gallery = () => {
   }, []);
 
   const galleryImages = [
+    
+        // Local Gallery Images
+    { id: 11, src: '/src/assets/images/1.jpg', alt: 'Gallery Image 1' },
+    { id: 12, src: '/src/assets/images/2.jpg', alt: 'Gallery Image 2' },
+   { id: 13, src: '/src/assets/images/3.jpg', alt: 'Gallery Image 3' },
+   { id: 14, src: '/src/assets/images/4.jpg', alt: 'Gallery Image 4' },
     // Hair Styling & Cuts
     { id: 1, src: 'https://images.pexels.com/photos/3993324/pexels-photo-3993324.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Professional Hair Styling' },
     { id: 2, src: 'https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Precision Haircut' },
@@ -25,7 +31,9 @@ const Gallery = () => {
     { id: 7, src: 'https://images.pexels.com/photos/3997386/pexels-photo-3997386.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Elegant Nail Designs' },
     
     // Makeup & Beauty
-    { id: 10, src: 'https://images.pexels.com/photos/3997375/pexels-photo-3997375.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Bridal Makeup' }
+    { id: 10, src: 'https://images.pexels.com/photos/3997375/pexels-photo-3997375.jpeg?auto=compress&cs=tinysrgb&w=600', alt: 'Bridal Makeup' },
+    
+
   ];
 
   const fadeInUp = {
