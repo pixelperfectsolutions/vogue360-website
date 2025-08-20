@@ -3,6 +3,40 @@
   padding: 120px 0;
 }
 
+/* Mobile padding-top fix */
+@media (max-width: 768px) {
+  .about-page {
+    padding: 100px 0 80px;
+  }
+  
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .story-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .story-text h2 {
+    font-size: 2rem;
+  }
+  
+  .story-text p {
+    font-size: 1rem;
+  }
+  
+  .story-image {
+    height: 300px;
+    order: -1; /* Show image before text on mobile */
+  }
+}
+
 .about-hero {
   text-align: center;
   margin-bottom: 80px;

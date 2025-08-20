@@ -11,6 +11,17 @@
   width: 100%;
 }
 
+/* Mobile padding-top fix */
+@media (max-width: 768px) {
+  .services-page {
+    padding: 100px 0 80px;
+  }
+  
+  .services-header {
+    padding: 40px 0;
+  }
+}
+
 .services-header-content {
   max-width: 800px;
   margin: 0 auto;

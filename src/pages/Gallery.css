@@ -3,6 +3,13 @@
   padding: 120px 0;
 }
 
+/* Mobile padding-top fix */
+@media (max-width: 768px) {
+  .gallery-page {
+    padding: 100px 0 80px;
+  }
+}
+
 .gallery-page .section-title {
   margin-bottom: 50px;
 }
