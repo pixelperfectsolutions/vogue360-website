@@ -103,23 +103,18 @@
     .menu-icon {
         display: block;
         position: absolute;
-        top: 22px;
-        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
         z-index: 2001;
         background: none;
     }
     .navbar .container {
         position: relative;
+        padding: 0 15px;
     }
     .nav-links {
         z-index: 2000;
-    }
-}
-
-
-@media (max-width: 991px) {
-    .menu-icon {
-        display: block;
     }
 
     .nav-links {
