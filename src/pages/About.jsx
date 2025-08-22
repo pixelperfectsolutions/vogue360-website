@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 import './About.css';
-import aboutImage from '../assets/images/about page.avif';
 
 const About = () => {
   useEffect(() => {
@@ -113,22 +112,36 @@ const About = () => {
               transition={{ duration: 0.8 }}
               className="story-text"
             >
-              <h2>Our Story</h2>
+              <h2>Brand Story</h2>
               <p>
-                Founded in 2010, Vouge360 began with a simple vision: to create a sanctuary where 
-                artistry and luxury converge to transform not just appearances, but confidence and 
-                self-expression.
+              Born in the heart of Paris, the fashion capital 
+              of the world, Vogue 360 brings a new era 
+              of beauty and style to Tamil Nadu. Our 
+              vision is simple, to make global trends and 
+              premium salon experiences accessible without 
+              compromise.
               </p>
               <p>
-                What started as a single salon in Mumbai has evolved into a premier destination 
-                for discerning clients seeking exceptional hair and beauty services. Our team of 
-                internationally trained stylists brings together diverse influences and techniques 
-                to create looks that are both timeless and contemporary.
+              At Vogue 360, every cut, color, and treatment is 
+              a masterpiece, crafted by internationally trained 
+              stylists and beauticians who understand that 
+              beauty is both an art and a science. We combine 
+              European sophistication with Indian sensibilities 
+              to create looks that are effortlessly chic, timeless, 
+              and uniquely you.
               </p>
               <p>
-                Today, Vouge360 stands as a beacon of excellence in the beauty industry, 
-                maintaining our commitment to personalized service, premium products, and 
-                cutting-edge techniques that ensure every client leaves feeling transformed.
+              From advanced hair artistry and luxury spa 
+              therapies to precision grooming and flawless 
+              skin care, Vogue 360 delivers world-class 
+              services at prices you will love. Step in for a 
+              transformation, step out with confidence, 
+              because beauty is not just about how you look, it 
+              is about how you feel.
+              </p>
+              <p>
+              Vogue 360, Experience the Art of Complete 
+              Renewal
               </p>
             </motion.div>
             <motion.div
@@ -138,7 +151,7 @@ const About = () => {
               transition={{ duration: 0.8 }}
               className="story-image"
             >
-              <img src={aboutImage} alt="Salon history and journey" className="story-img" />
+              <img src="/pages/about page.png" alt="Salon history and journey" className="story-img" />
             </motion.div>
           </div>
         </section>

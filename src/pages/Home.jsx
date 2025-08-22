@@ -3,11 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 import './Home.css';
-import slider1 from '../assets/slider1.jpg';
-import slider2 from '../assets/slider2.jpg';
-import slider3 from '../assets/slider3.jpeg';
-import slider4 from '../assets/slider4.avif';
-import homeImage from '../assets/images/home page.webP';
 
 const Home = () => {
   const sectionRef = useRef(null);
@@ -15,28 +10,28 @@ const Home = () => {
   
   const sliderContent = [
     {
-      image: slider1,
+      image: "/pages/slider1.png",
       title: "Luxury Beyond the Mirror",
       subtitle: "VOGUE 360 – Because You Deserve the Best",
       cta: "Book Now",
       ctaLink: "https://wa.me/919944471130"
     },
     {
-      image: slider2,
+      image: "/pages/slider2.png",
       title: "From Classic to Contemporary",
       subtitle: "Flawless Hair, Radiant Skin, and Pure Relaxation Await",
       cta: "Our Services",
       ctaLink: "/services"
     },
     {
-      image: slider3,
+      image: "/pages/slider3.png",
       title: "Redefining Elegance, One Style at a Time",
       subtitle: "Step into the World of Premium Beauty & Care",
       cta: "View Gallery",
       ctaLink: "/gallery"
     },
     {
-      image: slider4,
+      image: "/pages/slider4.png",
       title: "Unveil Your True Beauty",
       subtitle: "Luxury Hair & Skin Experiences Tailored Just for You",
       cta: "Contact Us",
@@ -242,7 +237,7 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="about-image"
             >
-              <img src={homeImage} alt="Elegant salon interior" className="about-img" />
+              <img src="/pages/home page.png" alt="Elegant salon interior" className="about-img" />
             </motion.div>
           </div>
         </div>

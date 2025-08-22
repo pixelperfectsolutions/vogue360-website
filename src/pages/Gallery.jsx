@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 import './Gallery.css';
 
-const LazyImage = ({ src, alt, className }) => {
+const LazyImage = ({ id, src, alt, className }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -27,16 +29,16 @@ const LazyImage = ({ src, alt, className }) => {
       { threshold: 0.1, rootMargin: '50px' }
     );
 
-    const imageElement = document.getElementById(`img-${alt}`);
+    const imageElement = document.getElementById(`img-${id}`);
     if (imageElement) {
       observer.observe(imageElement);
     }
 
     return () => observer.disconnect();
-  }, [alt]);
+  }, [id]);
 
   return (
-    <div id={`img-${alt}`} className={className} style={{ position: 'relative' }}>
+    <div id={`img-${id}`} className={className} style={{ position: 'relative' }}>
       {!isLoaded && !hasError && (
         <div className="image-placeholder">
           <div className="loading-spinner"></div>
@@ -65,15 +67,17 @@ const LazyImage = ({ src, alt, className }) => {
 };
 
 const Gallery = () => {
+  const [open, setOpen] = useState(false);
+  const [index, setIndex] = useState(0);
   useEffect(() => {
     window.scrollTo(0, 0);
     
     // Preload first few images
     const preloadImages = [
-      '/images/1.jpg',
-      '/images/2.jpg',
-      'https://images.pexels.com/photos/3993324/pexels-photo-3993324.jpeg?auto=compress&cs=tinysrgb&w=400',
-      'https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=400'
+      '/images/vogue360int-1.png',
+      '/images/vogue360int-2.png',
+      '/images/vogue360int-3.png',
+      '/images/vogue360int-4.png'
     ];
     
     preloadImages.forEach(src => {
@@ -86,29 +90,12 @@ const Gallery = () => {
   }, []);
 
   const galleryImages = [
-    // Local Gallery Images (highest priority)
-    { id: 11, src: '/images/1.jpg', alt: 'Vogue360 Salon Gallery Image 1' },
-    { id: 12, src: '/images/2.jpg', alt: 'Vogue360 Salon Gallery Image 2' },
-    { id: 13, src: '/images/3.jpg', alt: 'Vogue360 Salon Gallery Image 3' },
-    { id: 14, src: '/images/4.jpg', alt: 'Vogue360 Salon Gallery Image 4' },
-    
-    // Hair Styling & Cuts (optimized for faster loading)
-    { id: 1, src: 'https://images.pexels.com/photos/3993324/pexels-photo-3993324.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', alt: 'Professional Hair Styling' },
-    { id: 2, src: 'https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', alt: 'Precision Haircut' },
-    
-    // Hair Coloring
-    { id: 3, src: 'https://images.pexels.com/photos/3993310/pexels-photo-3993310.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', alt: 'Hair Coloring Process' },
-    { id: 4, src: 'https://images.pexels.com/photos/3993466/pexels-photo-3993466.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', alt: 'Balayage Coloring' },
-   
-    // Spa & Facials
-    { id: 5, src: 'https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', alt: 'Facial Treatment' },
-    
-    // Nail Services
-    { id: 6, src: 'https://images.pexels.com/photos/939836/pexels-photo-939836.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', alt: 'Nail Art Design' },
-    { id: 7, src: 'https://images.pexels.com/photos/3997386/pexels-photo-3997386.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', alt: 'Elegant Nail Designs' },
-    
-    // Makeup & Beauty
-    { id: 10, src: 'https://images.pexels.com/photos/3997375/pexels-photo-3997375.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop', alt: 'Bridal Makeup' }
+    { id: 1, src: '/images/vogue360int-1.png', alt: 'Vogue360 Salon Gallery Image 1' },
+    ...Array.from({ length: 23 }, (_, i) => ({
+      id: i + 2,
+      src: `/images/vogue360int-${i + 2}.png`,
+      alt: `Vogue360 Salon Gallery Image ${i + 2}`
+    }))
   ];
 
   const fadeInUp = {
@@ -173,15 +160,19 @@ const Gallery = () => {
           variants={staggerContainer}
           className="gallery-grid"
         >
-          {galleryImages.map((image) => (
+          {galleryImages.map((image, i) => (
             <motion.div
               key={image.id}
               variants={fadeInUp}
               whileHover={{ scale: 1.05 }}
               className="gallery-item"
+              onClick={() => {
+                setIndex(i);
+                setOpen(true);
+              }}
             >
               <div className="image-wrapper">
-                <LazyImage src={image.src} alt={image.alt} className="gallery-image" />
+                <LazyImage id={image.id} src={image.src} alt={image.alt} className="gallery-image" />
                 <div className="overlay">
                   <div className="overlay-content">
                     <h3>{image.alt}</h3>
@@ -192,6 +183,13 @@ const Gallery = () => {
           ))}
         </motion.div>
       </div>
+
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        slides={galleryImages}
+        index={index}
+      />
     </div>
   );
 };

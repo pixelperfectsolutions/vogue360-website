@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
-import logoImage from "../assets/logo.jpg";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,7 +59,7 @@ const Navbar = () => {
           transition={{ type: "spring", stiffness: 300 }}
         >
           <Link to="/">
-            <img src={logoImage} alt="Vouge360 Logo" className="logo-image" />
+            <img src="/VOGUE LOGO.png" alt="Vouge360 Logo" className="logo-image" />
           </Link>
         </motion.div>
 

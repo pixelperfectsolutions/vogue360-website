@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 import './Services.css';
-import servicesImage from '../assets/images/services page.jpg';
 
 const Services = () => {
   useEffect(() => {
@@ -13,352 +12,131 @@ const Services = () => {
   
   const serviceCategories = [
     'All Services',
-    'Hair Care',
-    'Beauty',
-    'Spa',
-    'Nails',
-    'Treatments',
-    'Seasoul Facials',
-    'Lotus Facials',
-    'CV Pro Facials',
-    'Derma Facials'
+    'Haircare',
+    'Haircuts & Styling',
+    'Hair Spa & Treatments',
+    'Hair Colouring',
+    'Skincare',
+    'Facials & Skin Treatments',
+    'Body Spa & Massages',
+    'Waxing',
+    'Nail Care',
+    'Bridal & Groom Packages'
   ];
   
   // Banner content for the services page
   const serviceBanner = {
     title: "Our Services",
-    subtitle: "Welcome to VOGUE 360 – where beauty meets wellness.\nExplore our all-in-one destination for hair, beauty, skin, nails and rejuvenation treatments designed to bring out your best self.",
+    subtitle: (
+      <p>Welcome to VOGUE 360 – where beauty meets wellness. Explore our all-in-one destination for hair, beauty, skin, nails and rejuvenation treatments designed to bring out your best self.</p>
+    ),
     imageDescription: "Elegant salon services banner showing premium treatments"
   };
 
   const servicesList = [
     {
       id: 1,
-      title: 'Advanced Hair Cut',
-      desc: 'Our advanced haircuts tailor to your unique style and face shape, reflecting the latest trends for women, men, and children, with expert recommendations',
-      category: 'Hair Care',
-      icon: '✂️',
-      price: '₹800 - ₹1500'
+      title: 'Wella',
+      desc: 'With over a century of expertise, Wella is synonymous with salon innovation. Known for advanced color science and precision haircare, Wella delivers products that blend creativity with performance, helping you achieve salon- perfect results every day.',
+      category: 'Haircare',
+      icon: '✨',
+      price: 'Price on request'
     },
     {
       id: 2,
-      title: 'Highlights',
-      desc: 'Illuminate your locks with stunning highlights at VOGUE 360, adding dimension and depth to your hair for a radiant and dynamic look.',
-      category: 'Hair Care',
-      icon: '✨',
-      price: '₹3000 - ₹5000'
+      title: 'System Professional',
+      desc: 'Driven by science and personalization, System Professional designs haircare treatments that are as unique as your hair’s energy code. Their formulas work on a molecular level to restore balance, strength, and vitality for truly customized results.',
+      category: 'Haircare',
+      icon: '🔬',
+      price: 'Price on request'
     },
     {
       id: 3,
-      title: 'Global Color',
-      desc: 'Transform your entire look with a stunning global color treatment, where our expert colorists blend hues to perfection for a seamless and radiant finish.',
-      category: 'Hair Care',
-      icon: '🎨',
-      price: '₹2500 - ₹4000'
+      title: 'Beauty Garage Professional SHEA',
+      desc: 'Enriched with the nourishing power of shea butter, Beauty Garage Professional Shea products deeply hydrate and repair hair. Designed for salon use, they smooth frizz, restore softness, and leave hair with a healthy, natural shine.',
+      category: 'Haircare',
+      icon: '🧴',
+      price: 'Price on request'
     },
-    { 
+    {
       id: 4,
-      icon: '🌟', 
-      title: 'Hair Spa (Wella Plex)', 
-      desc: 'Indulge in the ultimate pampering experience with our luxurious Hair Spa or Advanced Spa treatments, including the renowned Wella Plex.', 
-      category: 'Hair Care',
-      price: '₹1800 - ₹3000'
+      title: 'Sebastian Professional',
+      desc: 'Bold, edgy, and artistic — Sebastian Professional inspires limitless styling possibilities. From high performance care to iconic styling products, it’s the go-to for hair that makes a statement.',
+      category: 'Haircare',
+      icon: '🎨',
+      price: 'Price on request'
     },
-    { 
+    {
       id: 5,
-      icon: '🧵', 
-      title: 'Threading / Detan', 
-      desc: 'Experience precision threading and rejuvenating detan treatments for perfectly shaped brows and glowing skin.', 
-      category: 'Beauty',
-      price: '₹200 - ₹500'
+      title: 'D Fabulous',
+      desc: 'D Fabulous merges salon technology with luxury ingredients to deliver transformative hair results. Whether it’s taming unruly textures or adding luminous shine, the range promises a sleek, polished finish every time.',
+      category: 'Haircare',
+      icon: '💎',
+      price: 'Price on request'
     },
-    { 
+    {
       id: 6,
-      icon: '💧', 
-      title: 'Hydra Facial', 
-      desc: 'Experience the ultimate hydration and rejuvenation with our HydraFacial treatment.', 
-      category: 'Beauty',
-      price: '₹2500 - ₹3500'
+      title: 'Amazon Series',
+      desc: 'Harnessing the rich botanical treasures of the Amazon rainforest, Amazon Series infuses hair with nutrient-dense ingredients. Every formula works to strengthen, protect, and revitalize for naturally beautiful hair.',
+      category: 'Haircare',
+      icon: '🌿',
+      price: 'Price on request'
     },
-    { 
+    {
       id: 7,
-      icon: '✨', 
-      title: 'Hydrafacial Treatment', 
-      desc: 'Discover radiant skin with our HydraFacial treatments – a revolutionary skincare solution for a refreshed, rejuvenated complexion.', 
-      category: 'Treatments',
-      price: '₹3000 - ₹4500'
+      title: 'Olaplex',
+      desc: 'Olaplex revolutionized hair repair with its patented bond-building technology. Scientifically proven to rebuild broken hair bonds, it restores strength, structure, and integrity — making damaged hair feel like new.',
+      category: 'Haircare',
+      icon: '🔗',
+      price: 'Price on request'
     },
-    { 
+    {
       id: 8,
-      icon: '⭐', 
-      title: 'Specialized Treatment', 
-      desc: 'Experience specialized treatments for skin and hair concerns: pigmentation, acne, anti-dandruff, and hair loss solutions.', 
-      category: 'Beauty',
-      price: '₹1500 - ₹3000'
+      title: 'LOTUS PROFESSIONAL',
+      desc: 'At Lotus Professional, we believe in harnessing nature’s best ingredients with the latest in skincare science. Each product is formulated for effectiveness while ensuring the highest standards of skin safety and wellness.',
+      category: 'Skincare',
+      icon: '🌸',
+      price: 'Price on request'
     },
-    { 
+    {
       id: 9,
-      icon: '💄', 
-      title: 'Party Makeup / Advanced Makeup', 
-      desc: 'Elevate your look with our Party Makeup or Advanced Makeup services.', 
-      category: 'Beauty',
-      price: '₹2500 - ₹5000'
+      title: 'JEANNOT',
+      desc: 'Jeannot Ceuticals delivers high-performance skincare inspired by professional spa expertise. Its advanced formulations address multiple skin concerns, offering visible results and luxurious textures.',
+      category: 'Skincare',
+      icon: '✨',
+      price: 'Price on request'
     },
-    { 
+    {
       id: 10,
-      icon: '🌸', 
-      title: 'Waxing', 
-      desc: 'Achieve silky-smooth skin with our professional waxing services.', 
-      category: 'Beauty',
-      price: '₹300 - ₹1200'
+      title: 'SEA SOUL',
+      desc: 'Sea Soul draws its power from the ocean, using marine actives and minerals to rejuvenate, hydrate, and protect. Each treatment channels the restorative properties of the sea for a naturally radiant complexion.',
+      category: 'Skincare',
+      icon: '🌊',
+      price: 'Price on request'
     },
-    { 
+    {
       id: 11,
-      icon: '💅', 
-      title: 'Pedicure / Manicure', 
-      desc: 'Indulge in perfection with our Pedicure and Manicure services or refresh with our Ice Cream Pedicure.', 
-      category: 'Nails',
-      price: '₹800 - ₹1500'
+      title: 'SKINDORA',
+      desc: 'Skindora focuses on clean, effective skincare rooted in innovation. With formulations that balance nature and science, it offers targeted solutions for healthier, glowing skin.',
+      category: 'Skincare',
+      icon: '🍃',
+      price: 'Price on request'
     },
-    { 
+    {
       id: 12,
-      icon: '✨', 
-      title: 'Hand Polish / Feet Polish', 
-      desc: 'Get perfectly polished hands and feet with our expert nail technicians\' professional services.', 
-      category: 'Nails',
-      price: '₹400 - ₹700'
+      title: 'DERMALOGICA',
+      desc: 'Trusted by skincare professionals worldwide, Dermalogica is dedicated to delivering custom solutions for every skin type. Backed by education and research, it ensures healthy skin without compromise.',
+      category: 'Skincare',
+      icon: '🔬',
+      price: 'Price on request'
     },
-    { 
+    {
       id: 13,
-      icon: '👣', 
-      title: 'Heel Peel Treatment', 
-      desc: 'Experience ultimate foot care with our Heel Peel Treatment, gently exfoliating and softening rough heels for healthier-looking feet.', 
-      category: 'Nails',
-      price: '₹800 - ₹1200'
-    },
-    { 
-      id: 14,
-      icon: '🎨', 
-      title: 'Nail Art', 
-      desc: 'Express your unique style with our Nail Art services where our talented technicians create stunning designs to adorn your nails.', 
-      category: 'Nails',
-      price: '₹500 - ₹1500'
-    },
-    { 
-      id: 15,
-      icon: '💅', 
-      title: 'Nail Extension', 
-      desc: 'Transform your nails with our Nail Extension services, adding length and strength for a glamorous and polished look.', 
-      category: 'Nails',
-      price: '₹1500 - ₹2500'
-    },
-    { 
-      id: 16,
-      icon: '💅', 
-      title: 'Gel Polish', 
-      desc: 'Achieve long-lasting color and shine with our Gel Polish services, providing durable and flawless results for your nails.', 
-      category: 'Nails',
-      price: '₹800 - ₹1200'
-    },
-    { 
-      id: 17,
-      icon: '❄️', 
-      title: 'Anti-Dandruff Treatment', 
-      desc: 'Say goodbye to flakes with our targeted dandruff treatment, restoring scalp health for smoother, flake-free hair.', 
-      category: 'Hair Care',
-      price: '₹1500 - ₹2500'
-    },
-    { 
-      id: 18,
-      icon: '💁‍♀️', 
-      title: 'Volume Treatment', 
-      desc: 'Achieve luscious locks and added volume with our volumizing hair treatments, for hair that\'s full of life and body.', 
-      category: 'Hair Care',
-      price: '₹2000 - ₹3000'
-    },
-    { 
-      id: 19,
-      icon: '✨', 
-      title: 'Pigmentation Treatment', 
-      desc: 'Restore skin\'s natural radiance and even out tone with our pigmentation treatments, unveiling a brighter complexion.', 
-      category: 'Treatments',
-      price: '₹2500 - ₹4000'
-    },
-    { 
-      id: 20,
-      icon: '🧴', 
-      title: 'Acne Treatment', 
-      desc: 'Combat acne with our specialized treatments targeting breakouts, reducing inflammation, and preventing future flare-ups.', 
-      category: 'Treatments',
-      price: '₹2000 - ₹3500'
-    },
-    { 
-      id: 21,
-      icon: '✨', 
-      title: 'Gold Moroccan Facial', 
-      desc: 'Luxury facial incorporating gold-infused Moroccan elements designed specifically for acne control and skin purification.', 
-      category: 'Seasoul Facials',
-      price: '₹3500 - ₹5000'
-    },
-    { 
-      id: 22,
-      icon: '🍫', 
-      title: 'Chocolate Mint Facial', 
-      desc: 'Indulgent chocolate and mint infusion facial specially formulated for advanced tan removal and skin brightening.', 
-      category: 'Seasoul Facials',
-      price: '₹3000 - ₹4500'
-    },
-    { 
-      id: 23,
-      icon: '🌊', 
-      title: 'Hydra Boost Facial', 
-      desc: 'Intensive hydration facial that deeply moisturizes and revitalizes dehydrated skin for a plumper, more radiant appearance.', 
-      category: 'Seasoul Facials',
-      price: '₹3200 - ₹4800'
-    },
-    { 
-      id: 24,
-      icon: '🌟', 
-      title: 'Ultimo Pearl Facial', 
-      desc: 'Premium pearl-infused facial that effectively detoxifies skin and regulates discoloration for a more even-toned, luminous appearance.', 
-      category: 'Lotus Facials',
-      price: '₹4000 - ₹6000'
-    },
-    { 
-      id: 25,
-      icon: '🌓', 
-      title: 'Dipegmentone Facial', 
-      desc: 'Advanced skin brightening facial specially formulated to lighten and even out skin tone, addressing pigmentation concerns.', 
-      category: 'Lotus Facials',
-      price: '₹3500 - ₹5500'
-    },
-    { 
-      id: 26,
-      icon: '👔', 
-      title: 'Intensive Repair Whitening Facial', 
-      desc: "Men's specialized facial suitable for all skin types, improving radiance, boosting luminosity, and evening out skin tone for a healthier appearance.", 
-      category: 'CV Pro Facials',
-      price: '₹3800 - ₹5800'
-    },
-    { 
-      id: 27,
-      icon: '✨', 
-      title: 'Signature Facial', 
-      desc: 'Our premium CV Pro Signature Facial is suitable for all skin types, designed to nourish, lighten, and deeply hydrate skin for a revitalized complexion.', 
-      category: 'CV Pro Facials',
-      price: '₹4200 - ₹6200'
-    },
-    { 
-      id: 28,
-      icon: '⏳', 
-      title: 'Anti-Aging Facial', 
-      desc: 'Specialized CV Pro treatment that targets fine lines and wrinkles, promoting youthful, glowing skin with improved elasticity and firmness.', 
-      category: 'CV Pro Facials',
-      price: '₹4500 - ₹6500'
-    },
-    { 
-      id: 29,
-      icon: '🌟', 
-      title: 'Pure Pore Facial', 
-      desc: 'Targeted treatment focused on minimizing and refining open pores for smoother, more even skin texture.', 
-      category: 'Seasoul Facials',
-      price: '₹3000 - ₹4500'
-    },
-    { 
-      id: 30,
-      icon: '💧', 
-      title: 'Pure Moist Facial', 
-      desc: 'Intensive hydration facial providing deep moisturizing benefits for dehydrated skin, restoring suppleness and glow.', 
-      category: 'Derma Facials',
-      price: '₹2800 - ₹4200'
-    },
-    { 
-      id: 31,
-      icon: '❄️', 
-      title: 'C.C. Derma Facial', 
-      desc: 'Specialized ice facial designed for skin lightening and brightening, reducing pigmentation for a more even complexion.', 
-      category: 'Derma Facials',
-      price: '₹3200 - ₹4800'
-    },
-    { 
-      id: 32,
-      icon: '🌸', 
-      title: 'Korean Facial', 
-      desc: 'Advanced K-beauty inspired facial particularly suitable for fair skin, delivering a flawless, luminous glow.', 
-      category: 'Derma Facials',
-      price: '₹3500 - ₹5000'
-    },
-    { 
-      id: 33,
-      icon: '🌟', 
-      title: 'Red Carpet Facial', 
-      desc: 'Premium anti-aging facial treatment that visibly reduces fine lines and wrinkles for a red-carpet ready appearance.', 
-      category: 'Lotus Facials',
-      price: '₹4500 - ₹6500'
-    },
-    { 
-      id: 34,
-      icon: '✨', 
-      title: '4 Layers Advanced Radiance Facial', 
-      desc: 'Perfect for all skin types, this multi-layer facial significantly improves skin tone and texture for a radiant, refined complexion.', 
-      category: 'Lotus Facials',
-      price: '₹4000 - ₹6000'
-    },
-    { 
-      id: 35,
-      icon: '⏳', 
-      title: '4 Layers Advanced Anti-Aging Facial', 
-      desc: 'Specialized multi-step facial therapy designed to combat signs of aging, resulting in visibly younger-looking skin with reduced fine lines.', 
-      category: 'Lotus Facials',
-      price: '₹4500 - ₹6500'
-    },
-    { 
-      id: 36,
-      icon: '💠', 
-      title: 'Ultimo Platinum Facial', 
-      desc: 'Luxurious facial treatment infused with platinum particles that stimulates collagen production for firmer, more resilient skin.', 
-      category: 'Lotus Facials',
-      price: '₹5000 - ₹7000'
-    },
-    { 
-      id: 37,
-      icon: '🌟', 
-      title: 'Ultimo Pearl Facial', 
-      desc: 'Premium pearl-infused facial that effectively detoxifies skin and regulates discoloration for a more even-toned, luminous appearance.', 
-      category: 'Lotus Facials',
-      price: '₹4000 - ₹6000'
-    },
-    { 
-      id: 38,
-      icon: '🌓', 
-      title: 'Dipegmentone Facial', 
-      desc: 'Advanced skin brightening facial specially formulated to lighten and even out skin tone, addressing pigmentation concerns.', 
-      category: 'Lotus Facials',
-      price: '₹3500 - ₹5500'
-    },
-    { 
-      id: 39,
-      icon: '👔', 
-      title: 'Intensive Repair Whitening Facial', 
-      desc: "Men's specialized facial suitable for all skin types, improving radiance, boosting luminosity, and evening out skin tone for a healthier appearance.", 
-      category: 'CV Pro Facials',
-      price: '₹3800 - ₹5800'
-    },
-    { 
-      id: 40,
-      icon: '✨', 
-      title: 'Signature Facial', 
-      desc: 'Our premium CV Pro Signature Facial is suitable for all skin types, designed to nourish, lighten, and deeply hydrate skin for a revitalized complexion.', 
-      category: 'CV Pro Facials',
-      price: '₹4200 - ₹6200'
-    },
-    { 
-      id: 41,
-      icon: '⏳', 
-      title: 'Anti-Aging Facial', 
-      desc: 'Specialized CV Pro treatment that targets fine lines and wrinkles, promoting youthful, glowing skin with improved elasticity and firmness.', 
-      category: 'CV Pro Facials',
-      price: '₹4500 - ₹6500'
+      title: 'CHRISTIAN VALMY',
+      desc: 'Christian Valmy blends European skincare artistry with advanced science. Its treatments prioritize skin health, offering nourishment, hydration, and long-lasting beauty benefits.',
+      category: 'Skincare',
+      icon: '🇪🇺',
+      price: 'Price on request'
     },
   ];
 
@@ -414,7 +192,7 @@ const Services = () => {
         variants={staggerContainer}
         className="services-banner"
         style={{
-          backgroundImage: `url(${servicesImage})`,
+          backgroundImage: `url('/pages/services page.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -425,12 +203,7 @@ const Services = () => {
           className="banner-content"
         >
           <h1>{serviceBanner.title}</h1>
-          <p>{serviceBanner.subtitle.split('\n').map((text, i) => (
-            <React.Fragment key={i}>
-              {text}
-              {i === 0 && <br />}
-            </React.Fragment>
-          ))}</p>
+          <div>{serviceBanner.subtitle}</div>
         </motion.div>
       </motion.div>
       {/* Top Services Cards */}
@@ -497,201 +270,500 @@ const Services = () => {
           {/* Price categories removed as per user request */}
 
           <motion.div variants={fadeInUp}>
-            <h3 className="price-category-title">Hair Care</h3>
+            <h3 className="price-category-title">Haircuts &
+            Styling</h3>
             <div className="price-list-table">
               <div className="price-item">
-                <div className="price-item-name">Haircut & Blow Dry</div>
-                <div className="price-item-value">₹800+</div>
+                <div className="price-item-name">Top Stylist</div>
+                <div className="price-item-value">₹650</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Color & Highlights</div>
-                <div className="price-item-value">₹1200+</div>
+                <div className="price-item-name">Creative Director</div>
+                <div className="price-item-value">₹1300</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Balayage</div>
-                <div className="price-item-value">₹4000+</div>
+                <div className="price-item-name">Beard Trim</div>
+                <div className="price-item-value">₹180</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Brazilian Blowout</div>
-                <div className="price-item-value">₹7000+</div>
+                <div className="price-item-name">Kids Cut</div>
+                <div className="price-item-value">₹295</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Hair Extensions</div>
-                <div className="price-item-value">₹10000+</div>
+                <div className="price-item-name">Top Stylist</div>
+                <div className="price-item-value">₹1500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Creative Director</div>
+                <div className="price-item-value">₹2500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Wash & Blast Dry</div>
+                <div className="price-item-value">₹1000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Straight Blow Dry</div>
+                <div className="price-item-value">₹1000 </div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Wash & Styling</div>
+                <div className="price-item-value">₹1500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Ironing</div>
+                <div className="price-item-value">₹1500 (onwards)</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Tongs</div>
+                <div className="price-item-value">₹1500 (onwards)</div>
               </div>
             </div>
 
-            <h3 className="price-category-title">Beauty Services</h3>
+            <h3 className="price-category-title">Hair Spa &
+            Treatments</h3>
             <div className="price-list-table">
               <div className="price-item">
-                <div className="price-item-name">Makeup Application</div>
-                <div className="price-item-value">₹1500+</div>
+                <div className="price-item-name">Smoothening</div>
+                <div className="price-item-value">₹4999 (onwards)</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Brow Shaping</div>
-                <div className="price-item-value">₹400+</div>
+                <div className="price-item-name">Straightening</div>
+                <div className="price-item-value">₹3999 (onwards)</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Lash Extensions</div>
-                <div className="price-item-value">₹2000+</div>
+                <div className="price-item-name">Botox</div>
+                <div className="price-item-value">₹6999 (onwards)</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Facial</div>
-                <div className="price-item-value">₹1200+</div>
+                <div className="price-item-name">Keratin</div>
+                <div className="price-item-value">₹5999 (onwards)</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Hydrafacial Treatment</div>
-                <div className="price-item-value">₹3500+</div>
+                <div className="price-item-name">Systein</div>
+                <div className="price-item-value">₹8999 (onwards)</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Nanoblast</div>
+                <div className="price-item-value">₹10999 (onwards)</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Kera Blast</div>
+                <div className="price-item-value">₹12999 (onwards)</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Deep Nourishing</div>
+                <div className="price-item-value">₹2000 (onwards)</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Express Alchemy</div>
+                <div className="price-item-value">₹2500 (onwards)</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Intense Alchemy</div>
+                <div className="price-item-value">₹2800 (onwards)</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Dandruff Treatment</div>
+                <div className="price-item-value">₹2000 (onwards)</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Anti-Hairfall Treatment</div>
+                <div className="price-item-value">₹3500 (onwards)</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Butter Hair Spa</div>
+                <div className="price-item-value">₹4500 (onwards)</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Wellaplex</div>
+                <div className="price-item-value">₹3000 (onwards)</div>
               </div>
             </div>
 
-            <h3 className="price-category-title">Spa Services</h3>
+            <h3 className="price-category-title">Hair Colouring</h3>
             <div className="price-list-table">
               <div className="price-item">
-                <div className="price-item-name">Swedish Massage</div>
-                <div className="price-item-value">₹2500+</div>
+                <div className="price-item-name">Root Touch Up</div>
+                <div className="price-item-value">₹1000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Global</div>
+                <div className="price-item-value">₹1500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Root Touch Up</div>
+                <div className="price-item-value">₹2500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Streaks</div>
+                <div className="price-item-value">₹450 per streak</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Global</div>
+                <div className="price-item-value">₹4000 (onwards)</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Fashion Highlights</div>
+                <div className="price-item-value">₹3999 (onwards)</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Advanced Hair Colouring</div>
+                <div className="price-item-value">₹6999 (onwards)</div>
+              </div>
+            </div>
+
+            <h3 className="price-category-title">Facials & Skin Treatments</h3>
+            <div className="price-list-table">
+              <div className="price-item">
+                <div className="price-item-name">Basic Facial</div>
+                <div className="price-item-value">₹2499</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Aroma Lightening Facial</div>
+                <div className="price-item-value">₹3500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Gold Facial</div>
+                <div className="price-item-value">₹2500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Diamond Facial</div>
+                <div className="price-item-value">₹2500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Fruit Blast</div>
+                <div className="price-item-value">₹3000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Mineral Facial</div>
+                <div className="price-item-value">₹3000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Skin Brightening</div>
+                <div className="price-item-value">₹5500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Gold Moroccan</div>
+                <div className="price-item-value">₹6000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Derma Ice Facial</div>
+                <div className="price-item-value">₹7000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Advanced Tan Removal</div>
+                <div className="price-item-value">₹4500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Anti-Ageing Facial</div>
+                <div className="price-item-value">₹5000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Anti-Ageing Advanced</div>
+                <div className="price-item-value">₹6000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Acne Control Facial</div>
+                <div className="price-item-value">₹6500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Korean Glassy Skin Facial</div>
+                <div className="price-item-value">₹8000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Red Carpet DNA Facial</div>
+                <div className="price-item-value">₹8500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Bridal Glow Facial</div>
+                <div className="price-item-value">₹9000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Face & Neck</div>
+                <div className="price-item-value">₹1300</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Full Arms</div>
+                <div className="price-item-value">₹2500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Half Back</div>
+                <div className="price-item-value">₹3000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Full Back</div>
+                <div className="price-item-value">₹4000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Feet</div>
+                <div className="price-item-value">₹1500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Full Body Detan</div>
+                <div className="price-item-value">₹6000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Under Eye Treatment</div>
+                <div className="price-item-value">₹2500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Vita-C Glow Mask</div>
+                <div className="price-item-value">₹2000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Dead Sea Mud Mask</div>
+                <div className="price-item-value">₹3000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Deep Hydration Mask</div>
+                <div className="price-item-value">₹3000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Anti-Ageing Mask</div>
+                <div className="price-item-value">₹3000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Clean Up</div>
+                <div className="price-item-value">₹1799</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Clean Up Ritual</div>
+                <div className="price-item-value">₹1899</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Brazilian Clean Up</div>
+                <div className="price-item-value">₹2499</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Ageing Clean Up</div>
+                <div className="price-item-value">₹2599</div>
+              </div>
+            </div>
+
+            <h3 className="price-category-title">Body Spa & Massages</h3>
+            <div className="price-list-table">
+              <div className="price-item">
+                <div className="price-item-name">Basic Body Spa</div>
+                <div className="price-item-value">₹4999</div>
               </div>
               <div className="price-item">
                 <div className="price-item-name">Deep Tissue Massage</div>
-                <div className="price-item-value">₹3000+</div>
+                <div className="price-item-value">₹6999</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Hot Stone Massage</div>
-                <div className="price-item-value">₹3500+</div>
+                <div className="price-item-name">Aroma Therapy</div>
+                <div className="price-item-value">₹8999</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Therapy</div>
-                <div className="price-item-value">₹2000+</div>
-              </div>
-            </div>
-
-            <h3 className="price-category-title">Nail Services</h3>
-            <div className="price-list-table">
-              <div className="price-item">
-                <div className="price-item-name">Manicure</div>
-                <div className="price-item-value">₹600+</div>
+                <div className="price-item-name">Thai Massage</div>
+                <div className="price-item-value">₹9999</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Pedicure</div>
-                <div className="price-item-value">₹800+</div>
+                <div className="price-item-name">Steam Massage</div>
+                <div className="price-item-value">₹10999</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Gel Polish</div>
-                <div className="price-item-value">₹1000+</div>
+                <div className="price-item-name">Potli Massage</div>
+                <div className="price-item-value">₹12999</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Nail Art</div>
-                <div className="price-item-value">₹300+</div>
-              </div>
-            </div>
-
-            <h3 className="price-category-title">Treatments</h3>
-            <div className="price-list-table">
-              <div className="price-item">
-                <div className="price-item-name">Keratin Treatment</div>
-                <div className="price-item-value">₹6000+</div>
+                <div className="price-item-name">Hot Stone Massage with Swedish</div>
+                <div className="price-item-value">₹14999</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Scalp Treatment</div>
-                <div className="price-item-value">₹1500+</div>
+                <div className="price-item-name">Head Massage</div>
+                <div className="price-item-value">₹1000</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Hair Mask</div>
-                <div className="price-item-value">₹1000+</div>
-              </div>
-              <div className="price-item">
-                <div className="price-item-name">Split End Treatment</div>
-                <div className="price-item-value">₹1200+</div>
+                <div className="price-item-name">Foot Massage</div>
+                <div className="price-item-value">₹1500</div>
               </div>
             </div>
 
-            <h3 className="price-category-title">Seasoul Facials</h3>
+            <h3 className="price-category-title">Waxing</h3>
             <div className="price-list-table">
               <div className="price-item">
-                <div className="price-item-name">Cleanup</div>
-                <div className="price-item-value">₹1200+</div>
+                <div className="price-item-name">Underarms</div>
+                <div className="price-item-value">₹295</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Dead Sea Mineral Facial</div>
-                <div className="price-item-value">₹2500+</div>
+                <div className="price-item-name">Half Arms</div>
+                <div className="price-item-value">₹750</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Gold Moroccan Facial</div>
-                <div className="price-item-value">₹3000+</div>
+                <div className="price-item-name">Full Arms</div>
+                <div className="price-item-value">₹1500</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Chocolate Mint Facial</div>
-                <div className="price-item-value">₹2800+</div>
+                <div className="price-item-name">Half Legs</div>
+                <div className="price-item-value">₹850</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Pure Pore Facial</div>
-                <div className="price-item-value">₹2200+</div>
+                <div className="price-item-name">Full Legs</div>
+                <div className="price-item-value">₹1700</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Pure Moist Facial</div>
-                <div className="price-item-value">₹2400+</div>
+                <div className="price-item-name">Full Body</div>
+                <div className="price-item-value">₹5000</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Korean Facial</div>
-                <div className="price-item-value">₹3500+</div>
-              </div>
-              <div className="price-item">
-                <div className="price-item-name">Red Carpet Facial</div>
-                <div className="price-item-value">₹4000+</div>
+                <div className="price-item-name">Brazilian</div>
+                <div className="price-item-value">₹499</div>
               </div>
             </div>
 
-            <h3 className="price-category-title">Lotus Facials</h3>
+            <h3 className="price-category-title">Nail Care</h3>
             <div className="price-list-table">
               <div className="price-item">
-                <div className="price-item-name">4 Layers Advanced Radiance Facial</div>
-                <div className="price-item-value">₹3500+</div>
+                <div className="price-item-name">Basic</div>
+                <div className="price-item-value">₹500</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">4 Layers Advanced Anti-Aging Facial</div>
-                <div className="price-item-value">₹4000+</div>
+                <div className="price-item-name">AVL Express</div>
+                <div className="price-item-value">₹800</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Ultimo Platinum Facial</div>
-                <div className="price-item-value">₹4500+</div>
+                <div className="price-item-name">Chakra</div>
+                <div className="price-item-value">₹900</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Ultimo Pearl Facial</div>
-                <div className="price-item-value">₹4200+</div>
+                <div className="price-item-name">Chocolate Mint</div>
+                <div className="price-item-value">₹1000</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Dipegmentone Facial</div>
-                <div className="price-item-value">₹3800+</div>
+                <div className="price-item-name">Strawberry</div>
+                <div className="price-item-value">₹1100</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Intensive Repair Whitening Facial</div>
-                <div className="price-item-value">₹3500+</div>
+                <div className="price-item-name">Ice Cream</div>
+                <div className="price-item-value">₹2600</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Candle Spa</div>
+                <div className="price-item-value">₹2500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Basic</div>
+                <div className="price-item-value">₹800</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">AVL Express</div>
+                <div className="price-item-value">₹1500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Chakra</div>
+                <div className="price-item-value">₹1800</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Chocolate Mint</div>
+                <div className="price-item-value">₹2000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Strawberry</div>
+                <div className="price-item-value">₹2100</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Ice Cream</div>
+                <div className="price-item-value">₹3500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Candle Spa</div>
+                <div className="price-item-value">₹4000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Heel Peel Treatment</div>
+                <div className="price-item-value">₹3500</div>
               </div>
             </div>
 
-            <h3 className="price-category-title">CV Pro Facials</h3>
+            <h3 className="price-category-title">Bridal & Groom Packages</h3>
             <div className="price-list-table">
               <div className="price-item">
-                <div className="price-item-name">Signature Facial</div>
-                <div className="price-item-value">₹3000+</div>
+                <div className="price-item-name">Pre-BridalGroom Package</div>
+                <div className="price-item-value">₹8000</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Aging Facial</div>
-                <div className="price-item-value">₹3500+</div>
+                <div className="price-item-name">Pre-Bridegroom Package</div>
+                <div className="price-item-value">₹12000</div>
               </div>
-            </div>
-
-            <h3 className="price-category-title">Derma Facials</h3>
-            <div className="price-list-table">
               <div className="price-item">
-                <div className="price-item-name">C.C. Derma Facial</div>
-                <div className="price-item-value">₹3200+</div>
+                <div className="price-item-name">Pre-Bridal Package</div>
+                <div className="price-item-value">₹10000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Saree Draping</div>
+                <div className="price-item-value">₹1500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Hair & Makeup</div>
+                <div className="price-item-value">₹6000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Men’s Styling</div>
+                <div className="price-item-value">₹500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Simple Hairdo</div>
+                <div className="price-item-value">₹1500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Advanced Hairdo</div>
+                <div className="price-item-value">₹3500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Eye Makeup</div>
+                <div className="price-item-value">₹1500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Mini Makeup</div>
+                <div className="price-item-value">₹3500</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Simple Makeup</div>
+                <div className="price-item-value">₹5000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Hair & Makeup</div>
+                <div className="price-item-value">₹6000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Elegant Bride</div>
+                <div className="price-item-value">₹9000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Gorgeous Bride</div>
+                <div className="price-item-value">₹12000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">High Definition</div>
+                <div className="price-item-value">₹18000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Airbrush</div>
+                <div className="price-item-value">₹30000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Normal</div>
+                <div className="price-item-value">₹6000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">High Definition</div>
+                <div className="price-item-value">₹7000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Airbrush</div>
+                <div className="price-item-value">₹10000</div>
+              </div>
+              <div className="price-item">
+                <div className="price-item-name">Within City</div>
+                <div className="price-item-value">₹2000</div>
               </div>
             </div>
           </motion.div>
         </motion.div>
+
         {/* CTA Section */}
-      <div className="container">
+        <div className="container cta-section">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -715,6 +787,7 @@ const Services = () => {
             </motion.div>
           </motion.div>
         </div>
+
     </div>
   );
 };
