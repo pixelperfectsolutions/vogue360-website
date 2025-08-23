@@ -50,18 +50,11 @@ const Navbar = () => {
       }}
     >
       <div className="container">
-        <motion.div
-          className="logo"
-          whileHover={{
-            scale: 1.05,
-            boxShadow: "0 0 10px rgba(212, 175, 55, 0.5)",
-          }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
+        <div className="logo">
           <Link to="/">
             <img src="/VOGUE LOGO.png" alt="Vouge360 Logo" className="logo-image" />
           </Link>
-        </motion.div>
+        </div>
 
         <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
           {navItems.map((item, index) => (

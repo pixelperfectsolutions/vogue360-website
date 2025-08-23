@@ -14,12 +14,9 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <motion.div 
-              className="logo"
-              whileHover={{ scale: 1.05 }}
-            >
+            <div className="logo">
               <Link to="/">Vouge360<span className="dot">.</span>in</Link>
-            </motion.div>
+            </div>
             <p className="footer-description">
               Experience luxury and transformation at our premium salon. 
               We blend artistry with cutting-edge techniques to create your perfect look.

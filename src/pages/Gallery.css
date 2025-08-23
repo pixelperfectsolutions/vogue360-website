@@ -162,11 +162,13 @@
   padding: 0 20px;
   transform: translateY(20px);
   transition: transform 0.3s ease;
+  margin-bottom: 15px;
 }
 
 .gallery-item:hover .overlay-content h3 {
   transform: translateY(0);
 }
+
 
 @media (max-width: 768px) {
   .gallery-page {
@@ -212,5 +214,10 @@
   
   .overlay-content h3 {
     font-size: 0.9rem;
+  }
+  
+  .call-now-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
   }
 }

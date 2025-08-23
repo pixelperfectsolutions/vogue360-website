@@ -13,7 +13,7 @@ const Home = () => {
       image: "/pages/slider1.png",
       title: "Luxury Beyond the Mirror",
       subtitle: "VOGUE 360 – Because You Deserve the Best",
-      cta: "Book Now",
+      cta: "Call Now",
       ctaLink: "https://wa.me/919944471130"
     },
     {
@@ -243,24 +243,24 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="cta-section">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="cta-content"
-          >
-            <h2>Ready for Your Transformation?</h2>
-            <p>Book your appointment today and experience the Vouge360 difference</p>
-            <a href="https://wa.me/919944471130" className="btn btn-large" target="_blank" rel="noopener noreferrer">Book Now</a>
-          </motion.div>
-        </div>
-      </section>
-    </div>
-  );
-};
+    {/* CTA Section */}
+    <section className="cta-section">
+      <div className="container">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="cta-content"
+        >
+          <h2>Ready for Your Transformation?</h2>
+          <p>Call us today and experience the Vouge360 difference</p>
+          <a href="https://wa.me/919944471130" className="btn btn-large" target="_blank" rel="noopener noreferrer">Call Now</a>
+        </motion.div>
+      </div>
+    </section>
+  </div>
+);
+}
 
 export default Home;

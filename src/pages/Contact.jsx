@@ -267,7 +267,7 @@ const Contact = () => {
                 ></textarea>
               </div>
               
-              <button type="submit" className="btn btn-large">Book Now</button>
+              <button type="submit" className="btn btn-large">BOOK Now</button>
             </form>
           </motion.div>
         </div>
