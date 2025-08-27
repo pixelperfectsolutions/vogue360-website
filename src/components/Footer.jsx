@@ -60,11 +60,14 @@ const Footer = () => {
           <div className="footer-section">
             <h3>Services</h3>
             <ul>
-              <li>Hair Cutting</li>
-              <li>Hair Coloring</li>
-              <li>Styling</li>
-              <li>Beard Grooming</li>
-              <li>Spa Treatments</li>
+              <li>Haircuts & Styling</li>
+              <li> Hair Spa & Treatments </li>
+              <li>Hair Colouring</li>
+              <li>Facials & Skin Treatments </li>
+              <li>Body Spa & Massages </li>
+              <li>Waxing</li>
+              <li>Nail Care</li>
+              <li>Bridal & Groom Packages</li>
             </ul>
           </div>
           

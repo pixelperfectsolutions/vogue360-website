@@ -189,6 +189,109 @@ const Gallery = () => {
         close={() => setOpen(false)}
         slides={galleryImages}
         index={index}
+        carousel={{
+          finite: false,
+          preload: 1,
+          imageFit: 'contain',
+          padding: 0,
+          spacing: 0,
+          imageProps: { 
+            style: { 
+              maxHeight: '100vh',
+              objectFit: 'contain',
+              maxWidth: '100%',
+              height: 'auto',
+              width: 'auto',
+              margin: '0 auto',
+            } 
+          },
+          styles: {
+            slide: {
+              padding: 0,
+              margin: 0,
+              width: '100vw',
+              height: '100vh',
+            },
+            container: {
+              width: '100vw',
+              height: '100vh',
+            }
+          }
+        }}
+        styles={{
+          container: { 
+            '--yarl__color_backdrop': 'rgba(0, 0, 0, 0.95)',
+            '--yarl__slide_padding': '0',
+            '--yarl__slide_height': '100vh',
+            '--yarl__slide_margin': '0',
+            '--yarl__thumbnails_container_padding': '0',
+            '--yarl__thumbnails_thumbnail_margin': '0',
+            '--yarl__thumbnails_thumbnail_border_radius': '0',
+            '--yarl__thumbnails_thumbnail_border_color_selected': 'rgba(212, 175, 55, 0.8)',
+            '--yarl__thumbnails_thumbnail_border_width': '2px',
+          },
+          navigationPrev: {
+            padding: '1rem',
+            left: '10px',
+            '@media (max-width: 768px)': {
+              left: '5px',
+            },
+          },
+          navigationNext: {
+            padding: '1rem',
+            right: '10px',
+            '@media (max-width: 768px)': {
+              right: '5px',
+            },
+          },
+          slide: {
+            padding: '0',
+            margin: '0',
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          },
+          slideImage: {
+            maxWidth: '100%',
+            maxHeight: '100vh',
+            width: 'auto',
+            height: 'auto',
+            objectFit: 'contain',
+          },
+          thumbnailsContainer: {
+            display: 'none',
+          },
+        }}
+        controller={{ 
+          closeOnPullUp: true, 
+          closeOnBackdropClick: true,
+          touchAction: 'pan-y',
+        }}
+        render={{
+          buttonPrev: window.innerWidth <= 768 ? undefined : undefined,
+          buttonNext: window.innerWidth <= 768 ? undefined : undefined,
+          iconClose: () => (
+            <svg width="32" height="32" viewBox="0 0 24 24" style={{ 
+              color: '#fff',
+              position: 'absolute',
+              top: '20px',
+              right: '20px',
+              zIndex: 1,
+              backgroundColor: 'rgba(0,0,0,0.5)',
+              borderRadius: '50%',
+              padding: '4px',
+              cursor: 'pointer'
+            }}>
+              <path
+                fill="currentColor"
+                d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
+              />
+            </svg>
+          ),
+        }}
+        on={{ view: ({ index: currentIndex }) => setIndex(currentIndex) }}
       />
     </div>
   );

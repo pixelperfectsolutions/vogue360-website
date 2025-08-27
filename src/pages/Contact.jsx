@@ -27,8 +27,26 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real app, you would send this data to a server
-    alert('Thank you for your booking request! We will contact you shortly.');
+    
+    // Format the message with form data
+    const message = `*New Booking Request*%0A%0A` +
+                   `*Name:* ${formData.name}%0A` +
+                   `*Phone:* ${formData.phone}%0A` +
+                   `*Email:* ${formData.email}%0A` +
+                   `*Service:* ${formData.service}%0A` +
+                   `*Date:* ${formData.date}%0A` +
+                   `*Message:* ${formData.message}`;
+    
+    // Create WhatsApp URL with the message
+    const whatsappUrl = `https://wa.me/919944471130?text=${message}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+    
+    // Show success message
+    alert('Redirecting to WhatsApp to complete your booking...');
+    
+    // Clear the form
     setFormData({
       name: '',
       email: '',
@@ -63,12 +81,14 @@ const Contact = () => {
   ];
 
   const services = [
-    "Hair Cutting",
-    "Hair Coloring",
-    "Beard Grooming",
-    "Spa Treatment",
-    "Styling",
-    "Other"
+    "Haircuts & Styling",
+    "Hair Spa & Treatments",
+    "Hair Colouring",
+    "Facials & Skin Treatments",
+    "Body Spa & Massages",
+    "Waxing",
+    "Nail Care",
+    "Bridal & Groom Packages"
   ];
 
   const fadeInUp = {
@@ -245,16 +265,6 @@ const Contact = () => {
                     <option key={index} value={service}>{service}</option>
                   ))}
                 </select>
-              </div>
-              
-              <div className="form-group">
-                <input
-                  type="date"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleChange}
-                  required
-                />
               </div>
               
               <div className="form-group">
