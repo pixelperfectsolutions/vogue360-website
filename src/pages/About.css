@@ -1,3 +1,13 @@
+/* Remove underlines from all buttons and links */
+.about-page a,
+.about-page .btn,
+.about-page button,
+.about-page .cta-button,
+.about-page .cta-btn,
+.about-page .learn-more {
+  text-decoration: none !important;
+}
+
 .about-page {
   background: #0a0a0a;
   padding: 120px 0;

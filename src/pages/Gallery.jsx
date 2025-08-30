@@ -190,45 +190,26 @@ const Gallery = () => {
         slides={galleryImages}
         index={index}
         carousel={{
-          finite: false,
-          preload: 1,
-          imageFit: 'contain',
+          finite: true,
+          preload: 0,
           padding: 0,
           spacing: 0,
-          imageProps: { 
-            style: { 
-              maxHeight: '100vh',
-              objectFit: 'contain',
-              maxWidth: '100%',
-              height: 'auto',
-              width: 'auto',
-              margin: '0 auto',
-            } 
-          },
-          styles: {
-            slide: {
-              padding: 0,
-              margin: 0,
-              width: '100vw',
-              height: '100vh',
-            },
-            container: {
-              width: '100vw',
-              height: '100vh',
-            }
-          }
         }}
         styles={{
           container: { 
             '--yarl__color_backdrop': 'rgba(0, 0, 0, 0.95)',
-            '--yarl__slide_padding': '0',
+            '--yarl__slide_width': '100vw',
             '--yarl__slide_height': '100vh',
             '--yarl__slide_margin': '0',
+            '--yarl__slide_padding': '0',
+            '--yarl__slide_inset': '0',
             '--yarl__thumbnails_container_padding': '0',
             '--yarl__thumbnails_thumbnail_margin': '0',
             '--yarl__thumbnails_thumbnail_border_radius': '0',
             '--yarl__thumbnails_thumbnail_border_color_selected': 'rgba(212, 175, 55, 0.8)',
             '--yarl__thumbnails_thumbnail_border_width': '2px',
+            '--yarl__slide_x_padding': '0',
+            '--yarl__slide_y_padding': '0',
           },
           navigationPrev: {
             padding: '1rem',
@@ -247,8 +228,9 @@ const Gallery = () => {
           slide: {
             padding: '0',
             margin: '0',
-            width: '100%',
-            height: '100%',
+            width: '100vw',
+            height: '100vh',
+            position: 'relative',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -259,9 +241,15 @@ const Gallery = () => {
             width: 'auto',
             height: 'auto',
             objectFit: 'contain',
+            margin: 'auto',
           },
           thumbnailsContainer: {
-            display: 'none',
+            display: 'none !important',
+          },
+          slideContainer: {
+            width: '100vw',
+            height: '100vh',
+            overflow: 'hidden',
           },
         }}
         controller={{ 
@@ -270,8 +258,37 @@ const Gallery = () => {
           touchAction: 'pan-y',
         }}
         render={{
-          buttonPrev: window.innerWidth <= 768 ? undefined : undefined,
-          buttonNext: window.innerWidth <= 768 ? undefined : undefined,
+          slide: ({ slide, offset, rect }) => {
+            const width = offset === 0 ? '100vw' : '0';
+            const opacity = offset === 0 ? 1 : 0;
+            
+            return (
+              <div style={{
+                width: '100vw',
+                height: '100vh',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflow: 'hidden'
+              }}>
+                <img
+                  src={slide.src}
+                  alt={slide.alt}
+                  style={{
+                    maxWidth: '100%',
+                    maxHeight: '100vh',
+                    width: 'auto',
+                    height: 'auto',
+                    objectFit: 'contain',
+                    opacity,
+                    transition: 'opacity 0.3s ease',
+                  }}
+                />
+              </div>
+            );
+          },
+          buttonPrev: undefined,
+          buttonNext: undefined,
           iconClose: () => (
             <svg width="32" height="32" viewBox="0 0 24 24" style={{ 
               color: '#fff',

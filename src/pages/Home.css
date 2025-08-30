@@ -1,4 +1,27 @@
 /* =========================
+   CTA Buttons - Remove Underlines
+   ========================= */
+.hero .btn,
+.hero a.btn,
+.hero .cta-button,
+.hero .cta-btn,
+.hero .call-now,
+.cta-section .btn,
+.cta-section a.btn,
+.cta-section .cta-button,
+.cta-section .cta-btn,
+.cta-section .call-now,
+.btn,
+a.btn,
+.cta-button,
+.cta-btn,
+.call-now,
+.about-section a,
+.about-section .btn {
+  text-decoration: none !important;
+}
+
+/* =========================
    Hero Section - Desktop
    ========================= */
    .hero {
