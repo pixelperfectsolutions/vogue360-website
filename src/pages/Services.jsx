@@ -148,7 +148,7 @@ const Services = () => {
 
   const topServices = [
     { title: 'Hair Care', icon: '💇‍♀️', desc: 'Advanced haircuts, highlights, global hair color, straightening & volumizing.' },
-    { title: 'Hair Treatments', icon: '💆‍♀️', desc: 'Keratin, Hair Botox, Botoliss, Anti-Dandruff & Hair-loss solutions.' },
+    { title: 'Hair Treatments', icon: '💆‍♀️', desc: 'Keratin, Hair Botoliss, Botoliss, Anti-Dandruff & Hair-loss solutions.' },
     { title: 'Skin & Facials', icon: '🌟', desc: 'CV Pro, Lotus, Seasoul, Derma & Korean facials for every skin type.' },
     { title: 'Beauty Essentials', icon: '💄', desc: 'Hydra facial, threading, de-tan, party & advanced makeup, waxing.' },
     { title: 'Nail Services', icon: '💅', desc: 'Manicure, pedicure, nail art, extensions, gel polish, heel peel.' },
@@ -188,7 +188,7 @@ const Services = () => {
       items: [
         { id: 10, name: 'Smoothening', category: 'Hair Spa & Treatments', description: 'Tame frizz and flyaways for silky, smooth hair.', price: '₹4999 (onwards)', icon: '🌿' },
         { id: 11, name: 'Straightening', category: 'Hair Spa & Treatments', description: 'Achieve a permanently sleek, straight look.', price: '₹3999 (onwards)', icon: '🌿' },
-        { id: 12, name: 'Botox', category: 'Hair Spa & Treatments', description: 'An intensive deep conditioning treatment to rejuvenate and repair hair.', price: '₹6999 (onwards)', icon: '💉' },
+        { id: 12, name: 'Botoliss', category: 'Hair Spa & Treatments', description: 'An intensive deep conditioning treatment to rejuvenate and repair hair.', price: '₹6999 (onwards)', icon: '💉' },
         { id: 13, name: 'Keratin', category: 'Hair Spa & Treatments', description: 'A protein treatment to strengthen hair, reduce frizz, and add shine.', price: '₹5999 (onwards)', icon: '💊' },
         { id: 14, name: 'Systein', category: 'Hair Spa & Treatments', description: 'An advanced treatment for long-lasting smoothness and shine.', price: '₹8999 (onwards)', icon: '🔬' },
         { id: 15, name: 'Nanoblast', category: 'Hair Spa & Treatments', description: 'A revolutionary treatment for ultimate hair repair and rejuvenation.', price: '₹10999 (onwards)', icon: '⚛️' },
@@ -527,7 +527,7 @@ const Services = () => {
                 <div className="price-item-value">₹3999 (onwards)</div>
               </div>
               <div className="price-item">
-                <div className="price-item-name">Botox</div>
+                <div className="price-item-name">Botoliss</div>
                 <div className="price-item-value">₹6999 (onwards)</div>
               </div>
               <div className="price-item">
