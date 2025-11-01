@@ -61,7 +61,7 @@ const Home = () => {
     {
       icon: "💆‍♀️",
       title: "Hair Treatments",
-      description: "Keratin, Hair Botox, Botoliss, Anti-Dandruff & Hair-loss solutions."
+      description: "Keratin, Botoliss, Anti-Dandruff & Hair-loss solutions."
     },
     {
       icon: "🌟",
