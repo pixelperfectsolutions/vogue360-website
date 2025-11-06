@@ -13,29 +13,29 @@ const Home = () => {
       image: "/pages/slider1.png",
       title: "Luxury Beyond the Mirror",
       subtitle: "VOGUE 360 – Because You Deserve the Best",
-      cta: "Call Now",
-      ctaLink: "https://wa.me/919944471130"
+      cta: "CALL NOW",
+      ctaLink: "tel:919944471130"
     },
     {
       image: "/pages/slider2.png",
       title: "From Classic to Contemporary",
       subtitle: "Flawless Hair, Radiant Skin, and Pure Relaxation Await",
-      cta: "Our Services",
-      ctaLink: "/services"
+      cta: "CALL NOW",
+      ctaLink: "tel:919944471130"
     },
     {
       image: "/pages/slider3.png",
       title: "Redefining Elegance, One Style at a Time",
       subtitle: "Step into the World of Premium Beauty & Care",
-      cta: "View Gallery",
-      ctaLink: "/gallery"
+      cta: "CALL NOW",
+      ctaLink: "tel:919944471130"
     },
     {
       image: "/pages/slider4.png",
       title: "Unveil Your True Beauty",
       subtitle: "Luxury Hair & Skin Experiences Tailored Just for You",
-      cta: "Contact Us",
-      ctaLink: "/contact"
+      cta: "CALL NOW",
+      ctaLink: "tel:919944471130"
     }
   ];
 
@@ -136,8 +136,8 @@ const Home = () => {
                 <h1>{slide.title}</h1>
                 <p>{slide.subtitle}</p>
                 <div className="slider-buttons">
-                  {slide.ctaLink.startsWith('http') ? (
-                    <a href={slide.ctaLink} className="btn btn-primary" target="_blank" rel="noopener noreferrer">{slide.cta}</a>
+                  {(slide.ctaLink.startsWith('http') || slide.ctaLink.startsWith('tel:') || slide.ctaLink.startsWith('mailto:')) ? (
+                    <a href={slide.ctaLink} className="btn btn-primary" target={slide.ctaLink.startsWith('http') ? "_blank" : undefined} rel={slide.ctaLink.startsWith('http') ? "noopener noreferrer" : undefined}>{slide.cta}</a>
                   ) : (
                     <Link to={slide.ctaLink} className="btn btn-primary">{slide.cta}</Link>
                   )}
