@@ -346,63 +346,16 @@ const Services = () => {
         }}
       >
         <div className="banner-overlay"></div>
-        <motion.div
-          variants={fadeInUp}
-          className="banner-content"
-        >
-          <h1>{serviceBanner.title}</h1>
-          <div>{serviceBanner.subtitle}</div>
-        </motion.div>
-      </motion.div>
-      {/* Brand Products Section */}
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={staggerContainer}
-        className="services-header"
-      >
-        <motion.div variants={fadeInUp} className="services-header-content">
-          <motion.h1 variants={fadeInUp} className="section-title">
-            Discover Our Brand Products We Use
+        <motion.div variants={fadeInUp} className="banner-content">
+          <motion.h1 variants={fadeInUp}>
+            {serviceBanner.title}
           </motion.h1>
-          <motion.p variants={fadeInUp}>
-            Explore our premium brand products across all categories
-          </motion.p>
+          <motion.div variants={fadeInUp} className="banner-subtitle">
+            {serviceBanner.subtitle}
+          </motion.div>
         </motion.div>
       </motion.div>
-      
-      {/* Brand Product Categories */}
-      <div className="service-categories">
-        {brandCategories.map((category, index) => (
-          <button 
-            key={index} 
-            className={`category-btn ${activeBrandCategory === category ? 'active' : ''}`}
-            onClick={() => setActiveBrandCategory(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
 
-      {/* Brand Products Grid */}
-      <div className="services-list">
-        {filteredBrandProducts.map(service => (
-          <motion.div
-            key={service.id}
-            className="service-card"
-            variants={fadeInUp}
-            whileHover={{ scale: 1.04 }}
-          >
-            <div className="service-icon">{service.icon}</div>
-            <div className="service-badge">{service.category}</div>
-            <h3>{service.title}</h3>
-            <p>{service.desc}</p>
-            <a href="https://wa.me/919944471130" target="_blank" rel="noopener noreferrer" className="call-now-btn">Call Now</a>
-          </motion.div>
-        ))}
-      </div>
-      
       {/* Featured Services Section */}
       <motion.div
         initial="hidden"
@@ -452,36 +405,77 @@ const Services = () => {
         ))}
       </div>
 
+      {/* Brand Products Section */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+        className="services-header"
+      >
+        <motion.div variants={fadeInUp} className="services-header-content">
+          <motion.h1 variants={fadeInUp} className="section-title">
+            Discover Our Brand Products We Use
+          </motion.h1>
+          <motion.p variants={fadeInUp}>
+            Explore our premium brand products across all categories
+          </motion.p>
+        </motion.div>
+      </motion.div>
       
-
-        {/* CTA Section */}
-        <div className="container cta-section">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={staggerContainer}
+      {/* Brand Product Categories */}
+      <div className="service-categories">
+        {brandCategories.map((category, index) => (
+          <button 
+            key={index} 
+            className={`category-btn ${activeBrandCategory === category ? 'active' : ''}`}
+            onClick={() => setActiveBrandCategory(category)}
           >
-            <motion.h2
-              variants={fadeInUp}
-            >
-              Ready for Your Transformation?
-            </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-            >
-              Call us today and experience the Vouge360 difference
-            </motion.p>
-            <motion.div
-              variants={fadeInUp}
-            >
-              <a href="https://wa.me/919944471130" className="btn btn-large" target="_blank" rel="noopener noreferrer">Call Now</a>
-            </motion.div>
-          </motion.div>
-        </div>
+            {category}
+          </button>
+        ))}
+      </div>
 
-    </div>
-  );
+      {/* Brand Products Grid */}
+      <div className="services-list">
+        {filteredBrandProducts.map(service => (
+          <motion.div
+            key={service.id}
+            className="service-card"
+            variants={fadeInUp}
+            whileHover={{ scale: 1.04 }}
+          >
+            <div className="service-icon">{service.icon}</div>
+            <div className="service-badge">{service.category}</div>
+            <h3>{service.title}</h3>
+            <p>{service.desc}</p>
+            <a href="https://wa.me/919944471130" target="_blank" rel="noopener noreferrer" className="call-now-btn">Call Now</a>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* CTA Section */}
+      <div className="container cta-section">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={staggerContainer}
+        >
+          <motion.h2 variants={fadeInUp}>
+            Ready for Your Transformation?
+          </motion.h2>
+          <motion.p variants={fadeInUp}>
+            Call us today and experience the Vouge360 difference
+          </motion.p>
+          <motion.div variants={fadeInUp}>
+            <a href="https://wa.me/919944471130" className="btn btn-large" target="_blank" rel="noopener noreferrer">Call Now</a>
+          </motion.div>
+        </motion.div>
+      </div>
+
+  </div>
+);
 };
 
 export default Services;
