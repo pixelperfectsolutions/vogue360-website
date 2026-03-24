@@ -79,6 +79,10 @@ const Navbar = () => {
         <a
           href="tel:+919944471130"
           className="btn cta-button desktop-only"
+          onClick={(e) => {
+            e.preventDefault();
+            window.gtag_report_conversion('tel:+919944471130');
+          }}
         >
           CALL NOW
         </a>

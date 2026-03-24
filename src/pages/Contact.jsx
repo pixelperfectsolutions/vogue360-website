@@ -66,12 +66,12 @@ const Contact = () => {
     {
       icon: <FiPhone />,
       title: "Call Us",
-      details: "+91 9944471130"
+      details: <a href="tel:+919944471130" onClick={(e) => { e.preventDefault(); window.gtag_report_conversion('tel:+919944471130'); }} style={{ color: 'inherit', textDecoration: 'none' }}>+91 9944471130</a>
     },
     {
       icon: <FiMail />,
       title: "WhatsApp Us",
-      details: "+91 9944471130"
+      details: <a href="https://wa.me/919944471130" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>+91 9944471130</a>
     },
     {
       icon: <FiClock />,

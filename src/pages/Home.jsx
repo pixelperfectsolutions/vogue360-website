@@ -14,28 +14,28 @@ const Home = () => {
       title: "Luxury Beyond the Mirror",
       subtitle: "VOGUE 360 – Because You Deserve the Best",
       cta: "CALL NOW",
-      ctaLink: "tel:919944471130"
+      ctaLink: "tel:+919944471130"
     },
     {
       image: "/pages/slider2.png",
       title: "From Classic to Contemporary",
       subtitle: "Flawless Hair, Radiant Skin, and Pure Relaxation Await",
       cta: "CALL NOW",
-      ctaLink: "tel:919944471130"
+      ctaLink: "tel:+919944471130"
     },
     {
       image: "/pages/slider3.png",
       title: "Redefining Elegance, One Style at a Time",
       subtitle: "Step into the World of Premium Beauty & Care",
       cta: "CALL NOW",
-      ctaLink: "tel:919944471130"
+      ctaLink: "tel:+919944471130"
     },
     {
       image: "/pages/slider4.png",
       title: "Unveil Your True Beauty",
       subtitle: "Luxury Hair & Skin Experiences Tailored Just for You",
       cta: "CALL NOW",
-      ctaLink: "tel:919944471130"
+      ctaLink: "tel:+919944471130"
     }
   ];
 
@@ -137,7 +137,20 @@ const Home = () => {
                 <p>{slide.subtitle}</p>
                 <div className="slider-buttons">
                   {(slide.ctaLink.startsWith('http') || slide.ctaLink.startsWith('tel:') || slide.ctaLink.startsWith('mailto:')) ? (
-                    <a href={slide.ctaLink} className="btn btn-primary" target={slide.ctaLink.startsWith('http') ? "_blank" : undefined} rel={slide.ctaLink.startsWith('http') ? "noopener noreferrer" : undefined}>{slide.cta}</a>
+                    <a 
+                      href={slide.ctaLink} 
+                      className="btn btn-primary" 
+                      target={slide.ctaLink.startsWith('http') ? "_blank" : undefined} 
+                      rel={slide.ctaLink.startsWith('http') ? "noopener noreferrer" : undefined}
+                      onClick={(e) => {
+                        if (slide.ctaLink.startsWith('tel:')) {
+                          e.preventDefault();
+                          window.gtag_report_conversion(slide.ctaLink);
+                        }
+                      }}
+                    >
+                      {slide.cta}
+                    </a>
                   ) : (
                     <Link to={slide.ctaLink} className="btn btn-primary">{slide.cta}</Link>
                   )}
@@ -255,7 +268,16 @@ const Home = () => {
         >
           <h2>Ready for Your Transformation?</h2>
           <p>Call us today and experience the Vouge360 difference</p>
-          <a href="https://wa.me/919944471130" className="btn btn-large" target="_blank" rel="noopener noreferrer">Call Now</a>
+          <a 
+            href="tel:+919944471130" 
+            className="btn btn-large" 
+            onClick={(e) => {
+              e.preventDefault();
+              window.gtag_report_conversion('tel:+919944471130');
+            }}
+          >
+            Call Now
+          </a>
         </motion.div>
       </div>
     </section>
