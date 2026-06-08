@@ -60,18 +60,23 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <FiMapPin />,
-      title: "Our Location",
-      details: "No. 21/C2, 2nd floor, Peons Colony, Mettupalayam Road, Kavundampalayam, Coimbatore – 641 030"
+      title: "Kavundampalayam",
+      details: "No. 21/C2, 2nd floor, Peons Colony, Mettupalayam Road, Kavundampalayam, Coimbatore - 641 030"
+    },
+    {
+      icon: <FiMapPin />,
+      title: "Ramanathapuram",
+      details: "2nd floor, No.52, Sakthi Complex, Nanjundapuram Main Rd, Papammal Layout, Ramanathapuram, Coimbatore, Tamil Nadu 641045"
     },
     {
       icon: <FiPhone />,
       title: "Call Us",
-      details: "+91 9944471130"
+      details: <a href="tel:+919944471130" onClick={(e) => { e.preventDefault(); window.gtag_report_conversion('tel:+919944471130'); }} style={{ color: 'inherit', textDecoration: 'none' }}>+91 9944471130</a>
     },
     {
       icon: <FiMail />,
       title: "WhatsApp Us",
-      details: "+91 9944471130"
+      details: <a href="https://wa.me/919944471130" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>+91 9944471130</a>
     },
     {
       icon: <FiClock />,

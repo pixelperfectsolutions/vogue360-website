@@ -400,7 +400,16 @@ const Services = () => {
             <div className="service-badge">{service.category}</div>
             <h3>{service.name}</h3>
             <p className="service-desc">{service.description}</p>
-            <a href="https://wa.me/919944471130" target="_blank" rel="noopener noreferrer" className="call-now-btn">Call Now</a>
+            <a 
+              href="tel:+919944471130" 
+              className="call-now-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                window.gtag_report_conversion('tel:+919944471130');
+              }}
+            >
+              Call Now
+            </a>
           </motion.div>
         ))}
       </div>
@@ -449,7 +458,16 @@ const Services = () => {
             <div className="service-badge">{service.category}</div>
             <h3>{service.title}</h3>
             <p>{service.desc}</p>
-            <a href="https://wa.me/919944471130" target="_blank" rel="noopener noreferrer" className="call-now-btn">Call Now</a>
+            <a 
+              href="tel:+919944471130" 
+              className="call-now-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                window.gtag_report_conversion('tel:+919944471130');
+              }}
+            >
+              Call Now
+            </a>
           </motion.div>
         ))}
       </div>
@@ -469,7 +487,16 @@ const Services = () => {
             Call us today and experience the Vouge360 difference
           </motion.p>
           <motion.div variants={fadeInUp}>
-            <a href="https://wa.me/919944471130" className="btn btn-large" target="_blank" rel="noopener noreferrer">Call Now</a>
+            <a 
+              href="tel:+919944471130" 
+              className="btn btn-large"
+              onClick={(e) => {
+                e.preventDefault();
+                window.gtag_report_conversion('tel:+919944471130');
+              }}
+            >
+              Call Now
+            </a>
           </motion.div>
         </motion.div>
       </div>
