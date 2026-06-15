@@ -70,6 +70,11 @@ const Contact = () => {
     },
     {
       icon: <FiPhone />,
+      title: "Ramanathapuram - Call Us",
+      details: <a href="tel:+919677707600" onClick={(e) => { e.preventDefault(); window.gtag_report_conversion('tel:+919677707600'); }} style={{ color: 'inherit', textDecoration: 'none' }}>+91 9677707600</a>
+    },
+    {
+      icon: <FiPhone />,
       title: "Call Us",
       details: <a href="tel:+919944471130" onClick={(e) => { e.preventDefault(); window.gtag_report_conversion('tel:+919944471130'); }} style={{ color: 'inherit', textDecoration: 'none' }}>+91 9944471130</a>
     },
