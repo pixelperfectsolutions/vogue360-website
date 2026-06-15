@@ -76,6 +76,10 @@ const Footer = () => {
             <div className="contact-info">
               <p><FiMapPin /> Kavundampalayam: No. 21/C2, 2nd floor, Peons Colony, Mettupalayam Road, Kavundampalayam, Coimbatore - 641 030</p>
               <p><FiMapPin /> Ramanathapuram: 2nd floor, No.52, Sakthi Complex, Nanjundapuram Main Rd, Papammal Layout, Ramanathapuram, Coimbatore, Tamil Nadu 641045</p>
+              <p><FiPhone /> <a href="tel:+919677707600" style={{ color: 'inherit', textDecoration: 'none' }} onClick={(e) => {
+                e.preventDefault();
+                window.gtag_report_conversion('tel:+919677707600');
+              }}>+91 9677707600</a></p>
               <p><FiPhone /> <a href="tel:+919944471130" style={{ color: 'inherit', textDecoration: 'none' }} onClick={(e) => {
                 e.preventDefault();
                 window.gtag_report_conversion('tel:+919944471130');
