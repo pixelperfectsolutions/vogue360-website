@@ -64,19 +64,19 @@ const Contact = () => {
       details: "No. 21/C2, 2nd floor, Peons Colony, Mettupalayam Road, Kavundampalayam, Coimbatore - 641 030"
     },
     {
+      icon: <FiPhone />,
+      title: "Call Us",
+      details: <a href="tel:+919944471130" onClick={(e) => { e.preventDefault(); window.gtag_report_conversion('tel:+919944471130'); }} style={{ color: 'inherit', textDecoration: 'none' }}>+91 9944471130</a>
+    },
+    {
       icon: <FiMapPin />,
       title: "Ramanathapuram",
       details: "2nd floor, No.52, Sakthi Complex, Nanjundapuram Main Rd, Papammal Layout, Ramanathapuram, Coimbatore, Tamil Nadu 641045"
     },
     {
       icon: <FiPhone />,
-      title: "Ramanathapuram - Call Us",
-      details: <a href="tel:+919677707600" onClick={(e) => { e.preventDefault(); window.gtag_report_conversion('tel:+919677707600'); }} style={{ color: 'inherit', textDecoration: 'none' }}>+91 9677707600</a>
-    },
-    {
-      icon: <FiPhone />,
       title: "Call Us",
-      details: <a href="tel:+919944471130" onClick={(e) => { e.preventDefault(); window.gtag_report_conversion('tel:+919944471130'); }} style={{ color: 'inherit', textDecoration: 'none' }}>+91 9944471130</a>
+      details: <a href="tel:+919677707600" onClick={(e) => { e.preventDefault(); window.gtag_report_conversion('tel:+919677707600'); }} style={{ color: 'inherit', textDecoration: 'none' }}>+91 9677707600</a>
     },
     {
       icon: <FiMail />,
